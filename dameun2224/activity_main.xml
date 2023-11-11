@@ -7,17 +7,18 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+
     <TextView
         android:id="@+id/day"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
-        android:text="day 1"
+        android:text="Day 1"
         android:textSize="45dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintWidth_percent="0.3"
         app:layout_constraintHeight_percent="0.15"
         android:layout_margin="15dp"/>
 
@@ -77,9 +78,18 @@
         android:layout_margin="30dp"/>
 
 
-
-
-
+    <View
+        android:id="@+id/blackView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintWidth_percent="1"
+        android:visibility="invisible"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
