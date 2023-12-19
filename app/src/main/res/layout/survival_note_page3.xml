@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/page3"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 배경 비율 조절을 위한 ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratio_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/survival_note"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintWidth_percent="0.6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/survival_note_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/window_note" />
+
+            <ImageView
+                android:id="@+id/guide_line"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="1"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintTop_toTopOf="@id/survival_note_background"
+                app:layout_constraintStart_toStartOf="@id/survival_note_background"
+                android:background="@null"
+                />
+
+            <TextView
+                android:id="@+id/travel_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/guide_line"
+                app:layout_constraintEnd_toEndOf="@id/guide_line"
+                app:layout_constraintTop_toBottomOf="@id/guide_line"
+                android:fontFamily="@font/nanum3"
+                android:textSize="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="만일 오늘 탐험을 나간다면..."
+                android:textColor="@color/black"
+                />
+
+            <ImageView
+                android:id="@+id/water_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/water_icon"
+                app:layout_constraintTop_toBottomOf="@id/travel_text"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintWidth_percent="0.06"
+                android:background="@null"
+                />
+
+            <TextView
+                android:id="@+id/about_water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/water_icon"
+                app:layout_constraintTop_toTopOf="@id/water_icon"
+                app:layout_constraintBottom_toBottomOf="@id/water_icon"
+                android:fontFamily="@font/nanum3"
+                android:textSize="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="물을 1개 이상 얻을 수 있을 것 같다."
+                android:textColor="@color/black"
+                />
+
+            <ImageView
+                android:id="@+id/kimbap_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/kimbap_icon"
+                app:layout_constraintTop_toBottomOf="@id/water_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintHeight_percent="0.05"
+                app:layout_constraintWidth_percent="0.06"
+                android:background="@null"
+                />
+
+            <TextView
+                android:id="@+id/about_kimbap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/kimbap_icon"
+                app:layout_constraintTop_toTopOf="@id/kimbap_icon"
+                app:layout_constraintBottom_toBottomOf="@id/kimbap_icon"
+                android:fontFamily="@font/nanum3"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="식량을 2개 이상 얻을 수 있을 것 같다."
+                android:textColor="@color/black"
+                />
+
+            <ImageView
+                android:id="@+id/question_mark_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/question_mark"
+                app:layout_constraintTop_toBottomOf="@id/kimbap_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintHeight_percent="0.12"
+                app:layout_constraintWidth_percent="0.06"
+                android:background="@null"
+                />
+
+            <TextView
+                android:id="@+id/about_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/question_mark_icon"
+                app:layout_constraintTop_toTopOf="@id/question_mark_icon"
+                app:layout_constraintBottom_toBottomOf="@id/question_mark_icon"
+                android:fontFamily="@font/nanum3"
+                android:textSize="15dp"
+                android:layout_marginLeft="10dp"
+                android:text="어떤 물품을 1개 이상 얻을 수 있을 것 같다."
+                android:textColor="@color/black"
+                />
+
+            <ImageButton
+                android:id="@+id/next_button_page3to4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/next_button"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/previous_button_page3to2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/previous_button"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/close_button_page3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@null"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/signup_dialog"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@null">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratio_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/login_dialog_rounded">
+            >
+
+            <ImageView
+                android:id="@+id/register_title"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintHeight_percent="0.3"
+                android:scaleType="fitXY"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/register_title"
+                />
+
+            <EditText
+                android:id="@+id/register_studentid"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.12"
+                app:layout_constraintWidth_percent="0.6"
+                android:background="@drawable/edittext_border"
+                android:textColor="@color/black"
+                android:hint="학번 입력"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/register_title"
+                app:layout_constraintTop_toBottomOf="@id/register_title"
+                />
+
+            <EditText
+                android:id="@+id/register_username"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.12"
+                app:layout_constraintWidth_percent="0.6"
+                android:background="@drawable/edittext_border"
+                android:textColor="@color/black"
+                android:hint="닉네임 입력"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/register_title"
+                app:layout_constraintTop_toBottomOf="@id/register_studentid"
+                />
+
+
+            <ImageButton
+                android:id="@+id/registerdialog_close_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.12"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/close_button"
+                android:scaleType="fitXY"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/register_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.6"
+                app:layout_constraintStart_toStartOf="@id/register_studentid"
+                app:layout_constraintTop_toBottomOf="@id/register_username"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/register_dialog_register_button"
+                android:scaleType="fitXY"
+                android:background="@null"
+                />
+
+            <TextView
+                android:id="@+id/notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/register_username"
+                app:layout_constraintEnd_toEndOf="@id/register_username"
+                app:layout_constraintTop_toBottomOf="@id/register_username"
+                android:text="(한글을 원한다면 애뮬레이터 자판을 한글로 변경해야함)"
+                android:textSize="12sp"
+                android:alpha="0.7"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

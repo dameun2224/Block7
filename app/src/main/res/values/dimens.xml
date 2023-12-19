@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="image_button_height_percent">0.14</dimen>
+    <dimen name="image_button_width_percent">0.13</dimen>
+</resources>

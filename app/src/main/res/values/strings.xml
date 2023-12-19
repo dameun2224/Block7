@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Block7</string>
+    <string name="unloggined">Unloggined</string>
+    <string name="open_contract_tap" />
+    <string name="credit_bar" />
+    <string name="credit_icon" />
+    <string name="main_page_background" />
+    <string name="token_bar" />
+    <string name="menu_button" />
+    <string name="token_icon" />
+    <string name="token_plus_button" />
+    <string name="notice_tap" />
+
+    <string name="credit_value"/>
+    <string name="token_value"/>
+
+    <dimen name="mail_item_spacing">8dp</dimen>
+
+</resources>

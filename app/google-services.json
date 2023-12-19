@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "18054568036",
+    "project_id": "neonarcanachatting",
+    "storage_bucket": "neonarcanachatting.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18054568036:android:9e645bb282737483696771",
+        "android_client_info": {
+          "package_name": "com.cookandroid.block7"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9dfCX2GrdDXTqUqLklDnWY0yo7s4_JTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
