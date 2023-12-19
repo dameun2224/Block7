@@ -52,11 +52,14 @@
 
             <TextView
                 android:id="@+id/pre_event_script"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
+                app:layout_constraintWidth_percent="0.9"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/guide_line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:fontFamily="@font/nanum2"
-                android:textSize="13dp"
+                android:textSize="15pt"
                 android:text="여기에 텍스트를 넣습니다."
                 android:textColor="@color/black"
                 />

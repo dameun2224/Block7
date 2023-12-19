@@ -10,7 +10,7 @@ class Event_independence_ox_blueGuy (GameActivity: GameActivity, eventName: Stri
     }
 
     override fun setIsAvailable() {
-        if(GameActivity.food_water.count > 1 && !GameActivity.itemListNotOwned.isEmpty()) isAvailable = true
+        if(GameActivity.food_water.count > 2 && !GameActivity.itemListNotOwned.isEmpty()) isAvailable = true
         else isAvailable = false
     }
 

@@ -10,7 +10,7 @@ class Event_independence_ox_askWaterFromMedStudents (GameActivity: GameActivity,
     }
 
     override fun setIsAvailable() {
-        if(GameActivity.food_water.count > 1) isAvailable = true
+        if(GameActivity.food_water.count > 2) isAvailable = true
         else isAvailable = false
     }
 

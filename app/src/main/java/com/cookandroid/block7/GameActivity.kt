@@ -19,8 +19,8 @@ import android.widget.TextView
 
 
 class GameActivity : BaseActivity() {
-    lateinit var blackBackground : ImageView
-    lateinit var dayText : TextView
+    lateinit var blackBackground: ImageView
+    lateinit var dayText: TextView
 
     lateinit var member_dameun: Member
     lateinit var member_eunju: Member
@@ -53,7 +53,10 @@ class GameActivity : BaseActivity() {
     val itemListNotOwned = mutableListOf<Item>() //초기에는 모든 아이템 없는걸로 취급
     val itemListBroken = mutableListOf<Item>()
 
-    lateinit var item_choose_button : ImageButton
+    lateinit var item_choose_button: ImageButton
+
+    lateinit var kimbap_amount_text: TextView
+    lateinit var water_amount_text: TextView
 
 
     /* 무작위로 객체를 반환하는 메소드 */
@@ -61,18 +64,30 @@ class GameActivity : BaseActivity() {
         return memberListIsIn.random()
         // Item과 달리 null은 고려하지 않음.
     }
+
     fun getRandomItemitemListOwned(): Item? { // 무작위 아아템 : 무작위로 가지고 있는 아이템 중 하나의 아이템을 선택하는 메소드
-        return if (itemListOwned.isNotEmpty()) { itemListOwned.random() }
-        else { null } // 리스트가 비어있을 경우 null 반환
+        return if (itemListOwned.isNotEmpty()) {
+            itemListOwned.random()
+        } else {
+            null
+        } // 리스트가 비어있을 경우 null 반환
     }
+
     fun getRandomItemitemListNotOwned(): Item? {
-        return if (itemListNotOwned.isNotEmpty()) { itemListNotOwned.random() }
-        else { null}
+        return if (itemListNotOwned.isNotEmpty()) {
+            itemListNotOwned.random()
+        } else {
+            null
+        }
     }
+
     fun selectRandomFood(): Food { // 무작위로 김밥, 물 중 하나를 선택하는 메소드
         val randomIndex = (0..1).random() // 0 또는 1 중에서 무작위 선택
-        return if (randomIndex == 0) { food_kimbap }
-        else { food_water }
+        return if (randomIndex == 0) {
+            food_kimbap
+        } else {
+            food_water
+        }
     }
 
 
@@ -83,14 +98,16 @@ class GameActivity : BaseActivity() {
 
 
     // 멤버 dayPase - 하루가 지날 때 호출
-    fun memberDayPase() { for(member in memberList) member.dayPase() }
+    fun memberDayPase() {
+        for (member in memberList) member.dayPase()
+    }
 
     // 아이템과 멤버의 visiblity 업데이트 메소드 - finishbutton 클릭 리스너에서 호출 + ...
     fun updateAllVisibility() {
-        for(item in itemListOwned) item.updateItemVisibility()
-        for(item in itemListBroken) item.updateItemVisibility()
-        for(item in itemListNotOwned) item.updateItemVisibility()
-        for(member in memberList) member.updateVisibility()
+        for (item in itemListOwned) item.updateItemVisibility()
+        for (item in itemListBroken) item.updateItemVisibility()
+        for (item in itemListNotOwned) item.updateItemVisibility()
+        for (member in memberList) member.updateVisibility()
         food_kimbap.updateVisibility()
         food_water.updateVisibility()
     }
@@ -108,10 +125,10 @@ class GameActivity : BaseActivity() {
         startService(musicIntent)
 
         // 객체 생성
-        member_dameun  = Member(this,"dameun", "담은", findViewById(R.id.member_dameun))
-        member_eunju  = Member(this,"eunju", "은주", findViewById(R.id.member_eunju))
-        member_soun  = Member(this,"sowoon", "소운", findViewById(R.id.member_sowoon))
-        member_hyundong = Member(this,"hyundong", "현동", findViewById(R.id.member_hyundong))
+        member_dameun = Member(this, "dameun", "담은", findViewById(R.id.member_dameun))
+        member_eunju = Member(this, "eunju", "은주", findViewById(R.id.member_eunju))
+        member_soun = Member(this, "sowoon", "소운", findViewById(R.id.member_sowoon))
+        member_hyundong = Member(this, "hyundong", "현동", findViewById(R.id.member_hyundong))
 
         memberList = listOf(member_dameun, member_eunju, member_soun, member_hyundong)
         memberListIsIn = mutableListOf(member_dameun, member_eunju, member_soun, member_hyundong)
@@ -121,7 +138,7 @@ class GameActivity : BaseActivity() {
         item_card = Item(this, "card", "할리갈리", findViewById(R.id.item_card))
         item_drone = Item(this, "drone", "드론", findViewById(R.id.item_drone))
         item_medkit = Item(this, "medkit", "응급상자", findViewById(R.id.item_firstaidkit))
-        item_flashlight = Item(this, "flashlight", "손전등",findViewById(R.id.item_flashlight))
+        item_flashlight = Item(this, "flashlight", "손전등", findViewById(R.id.item_flashlight))
         item_gasmask = Item(this, "gasmask", "방독면", findViewById(R.id.item_gasmask))
         item_lock = Item(this, "lock", "자물쇠", findViewById(R.id.item_lock))
         item_map = Item(this, "map", "지도", findViewById(R.id.item_map))
@@ -130,10 +147,12 @@ class GameActivity : BaseActivity() {
         item_rattle = Item(this, "rattle", "딸랑이", findViewById(R.id.item_rattle))
         item_toolbox = Item(this, "toolbox", "공구상자", findViewById(R.id.item_toolbox))
 
-        itemList = listOf(item_axe, item_book, item_card, item_drone, item_medkit, item_flashlight,
-            item_gasmask, item_lock, item_map, item_pesticide, item_phone, item_rattle, item_toolbox)
+        itemList = listOf(
+            item_axe, item_book, item_card, item_drone, item_medkit, item_flashlight,
+            item_gasmask, item_lock, item_map, item_pesticide, item_phone, item_rattle, item_toolbox
+        )
         //모든 아이템들에 대한 lose처리
-        for(item in itemList) item.loseItem()
+        for (item in itemList) item.loseItem()
 
         food_kimbap = Food(this, "kimbap", "김밥", findViewById(R.id.food_kimbap))
         food_water = Food(this, "water", "물", findViewById(R.id.food_water))
@@ -147,11 +166,15 @@ class GameActivity : BaseActivity() {
         randomizeItems() // 아이템 랜덤 생성
         updateAllVisibility()
 
+        water_amount_text = findViewById(R.id.current_water)
+        kimbap_amount_text = findViewById(R.id.current_kimbap)
+        updateFoodText()
+
         firstdayfadeout(blackBackground, dayText)
 
         // 인게임 옵션 버튼
-        val ingame_option_button : ImageButton = findViewById(R.id.ingame_option_button)
-        ingame_option_button.setOnClickListener{
+        val ingame_option_button: ImageButton = findViewById(R.id.ingame_option_button)
+        ingame_option_button.setOnClickListener {
             val intent = Intent(this, OptionDialog::class.java)
             startActivity(intent)
         }
@@ -161,36 +184,36 @@ class GameActivity : BaseActivity() {
         /* Page 관련 .. */
         var current_page = 1
 
-        val closebutton_page1 : ImageButton = findViewById(R.id.close_button_page1)
-        val closebutton_page2 : ImageButton = findViewById(R.id.close_button_page2)
-        val closebutton_page3 : ImageButton = findViewById(R.id.close_button_page3)
-        val closebutton_page4 : ImageButton = findViewById(R.id.close_button_page4)
+        val closebutton_page1: ImageButton = findViewById(R.id.close_button_page1)
+        val closebutton_page2: ImageButton = findViewById(R.id.close_button_page2)
+        val closebutton_page3: ImageButton = findViewById(R.id.close_button_page3)
+        val closebutton_page4: ImageButton = findViewById(R.id.close_button_page4)
 
-        var pre_script : TextView = findViewById(R.id.pre_event_script)
-        var post_script : TextView = findViewById(R.id.post_event_script)
+        var pre_script: TextView = findViewById(R.id.pre_event_script)
+        var post_script: TextView = findViewById(R.id.post_event_script)
 
         var selectedEvent = eventHandler.getRandomEvent()
 
         pre_script.text = selectedEvent.getPreScript()
         post_script.text = "우리가 무사히 살아나갈 수 있을까?"
 
-        val survival_note_page1 : View = findViewById(R.id.page1)
-        val survival_note_page2 : View = findViewById(R.id.page2)
-        val survival_note_page3 : View = findViewById(R.id.page3)
-        val survival_note_page4 : View = findViewById(R.id.page4)
+        val survival_note_page1: View = findViewById(R.id.page1)
+        val survival_note_page2: View = findViewById(R.id.page2)
+        val survival_note_page3: View = findViewById(R.id.page3)
+        val survival_note_page4: View = findViewById(R.id.page4)
 
         survival_note_page1.visibility = View.GONE
         survival_note_page2.visibility = View.GONE
         survival_note_page3.visibility = View.GONE
         survival_note_page4.visibility = View.GONE
 
-        val page1to2button : ImageButton = findViewById(R.id.next_button_page1to2)
-        val page2to3button : ImageButton = findViewById(R.id.next_button_page2to3)
-        val page3to4button : ImageButton = findViewById(R.id.next_button_page3to4)
+        val page1to2button: ImageButton = findViewById(R.id.next_button_page1to2)
+        val page2to3button: ImageButton = findViewById(R.id.next_button_page2to3)
+        val page3to4button: ImageButton = findViewById(R.id.next_button_page3to4)
 
-        val page2to1button : ImageButton = findViewById(R.id.previous_button_page2to1)
-        val page3to2button : ImageButton = findViewById(R.id.previous_button_page3to2)
-        val page4to3button : ImageButton = findViewById(R.id.previous_button_page4to3)
+        val page2to1button: ImageButton = findViewById(R.id.previous_button_page2to1)
+        val page3to2button: ImageButton = findViewById(R.id.previous_button_page3to2)
+        val page4to3button: ImageButton = findViewById(R.id.previous_button_page4to3)
 
         page1to2button.setOnClickListener { switchPages(survival_note_page1, survival_note_page2) }
         page2to3button.setOnClickListener { switchPages(survival_note_page2, survival_note_page3) }
@@ -216,7 +239,7 @@ class GameActivity : BaseActivity() {
             current_page = 4
         }
 
-        val pc_button : ImageButton = findViewById(R.id.pc_button)
+        val pc_button: ImageButton = findViewById(R.id.pc_button)
         pc_button.setOnClickListener {
             when (current_page) {
                 1 -> survival_note_page1.visibility = View.VISIBLE
@@ -237,15 +260,15 @@ class GameActivity : BaseActivity() {
         var is_eunju_water_check = false
         var is_hyundong_water_check = false
 
-        val soun_kimbap : ImageButton = findViewById(R.id.soun_kimbap_check)
-        val dameun_kimbap : ImageButton = findViewById(R.id.dameun_kimbap_check)
-        val eunju_kimbap : ImageButton = findViewById(R.id.eunju_kimbap_check)
-        val hyundong_kimbap : ImageButton = findViewById(R.id.hyundong_kimbap_check)
+        val soun_kimbap: ImageButton = findViewById(R.id.soun_kimbap_check)
+        val dameun_kimbap: ImageButton = findViewById(R.id.dameun_kimbap_check)
+        val eunju_kimbap: ImageButton = findViewById(R.id.eunju_kimbap_check)
+        val hyundong_kimbap: ImageButton = findViewById(R.id.hyundong_kimbap_check)
 
-        val soun_water : ImageButton = findViewById(R.id.soun_water_check)
-        val dameun_water : ImageButton = findViewById(R.id.dameun_water_check)
-        val eunju_water : ImageButton = findViewById(R.id.eunju_water_check)
-        val hyundong_water : ImageButton = findViewById(R.id.hyundong_water_check)
+        val soun_water: ImageButton = findViewById(R.id.soun_water_check)
+        val dameun_water: ImageButton = findViewById(R.id.dameun_water_check)
+        val eunju_water: ImageButton = findViewById(R.id.eunju_water_check)
+        val hyundong_water: ImageButton = findViewById(R.id.hyundong_water_check)
 
         // 응급상자 버튼
         var is_soun_medkit_check = false
@@ -253,60 +276,73 @@ class GameActivity : BaseActivity() {
         var is_eunju_medkit_check = false
         var is_hyundong_medkit_check = false
 
-        val soun_medkit : ImageButton = findViewById(R.id.soun_medkit_check)
-        val dameun_medkit : ImageButton = findViewById(R.id.dameun_medkit_check)
-        val eunju_medkit : ImageButton = findViewById(R.id.eunju_medkit_check)
-        val hyundong_medkit : ImageButton = findViewById(R.id.hyundong_medkit_check)
+        val soun_medkit: ImageButton = findViewById(R.id.soun_medkit_check)
+        val dameun_medkit: ImageButton = findViewById(R.id.dameun_medkit_check)
+        val eunju_medkit: ImageButton = findViewById(R.id.eunju_medkit_check)
+        val hyundong_medkit: ImageButton = findViewById(R.id.hyundong_medkit_check)
 
         soun_medkit.visibility = View.GONE
         dameun_medkit.visibility = View.GONE
         eunju_medkit.visibility = View.GONE
         hyundong_medkit.visibility = View.GONE
 
-        val pre_event_o_button : ImageButton = findViewById(R.id.o_button)
-        val pre_event_x_button : ImageButton = findViewById(R.id.x_button)
-        var item_choose_button : ImageButton = findViewById(R.id.item_choose_button)
+        val pre_event_o_button: ImageButton = findViewById(R.id.o_button)
+        val pre_event_x_button: ImageButton = findViewById(R.id.x_button)
+        var item_choose_button: ImageButton = findViewById(R.id.item_choose_button)
 
         var choose_value = false
 
         var is_ox_event = false
         var is_item_event = false
 
-        val finishbutton : ImageButton = findViewById(R.id.next_button_toend)
+        val finishbutton: ImageButton = findViewById(R.id.next_button_toend)
 
         /* Page 관련 메소드 */
 
         // 멤버 스크립트 반환
-        fun getAllMemberScript(): String { return member_dameun.memberScript + member_soun.memberScript + member_hyundong.memberScript + member_eunju.memberScript }
+        fun getAllMemberScript(): String {
+            return member_dameun.memberScript + member_soun.memberScript + member_hyundong.memberScript + member_eunju.memberScript
+        }
 
         fun setMedkitBtn() {
             soun_medkit.visibility = View.GONE
             dameun_medkit.visibility = View.GONE
             eunju_medkit.visibility = View.GONE
             hyundong_medkit.visibility = View.GONE
-            if(member_dameun.isNeedMedkit()) dameun_medkit.visibility = View.VISIBLE
-            if(member_soun.isNeedMedkit()) soun_medkit.visibility = View.VISIBLE
-            if(member_eunju.isNeedMedkit()) eunju_medkit.visibility = View.VISIBLE
-            if(member_hyundong.isNeedMedkit()) hyundong_medkit.visibility = View.VISIBLE
+            if (member_dameun.isNeedMedkit()) dameun_medkit.visibility = View.VISIBLE
+            if (member_soun.isNeedMedkit()) soun_medkit.visibility = View.VISIBLE
+            if (member_eunju.isNeedMedkit()) eunju_medkit.visibility = View.VISIBLE
+            if (member_hyundong.isNeedMedkit()) hyundong_medkit.visibility = View.VISIBLE
+            if (!item_medkit.getIsOwned()) dameun_medkit.visibility =
+                View.GONE; soun_medkit.visibility = View.GONE; eunju_medkit.visibility =
+                View.GONE; hyundong_medkit.visibility = View.GONE
         }
 
         fun useMedkit() {
-            if(is_soun_medkit_check) {member_soun.useMedkit(); item_medkit.loseItem()}
-            if(is_eunju_medkit_check) {member_eunju.useMedkit(); item_medkit.loseItem()}
-            if(is_dameun_medkit_check) {member_dameun.useMedkit(); item_medkit.loseItem()}
-            if(is_hyundong_medkit_check) {member_hyundong.useMedkit(); item_medkit.loseItem()}
+            if (is_soun_medkit_check) {
+                member_soun.useMedkit(); item_medkit.loseItem()
+            }
+            if (is_eunju_medkit_check) {
+                member_eunju.useMedkit(); item_medkit.loseItem()
+            }
+            if (is_dameun_medkit_check) {
+                member_dameun.useMedkit(); item_medkit.loseItem()
+            }
+            if (is_hyundong_medkit_check) {
+                member_hyundong.useMedkit(); item_medkit.loseItem()
+            }
         }
 
         // 식량 배급 메소드
         fun feed() {
-            if(is_soun_kimbap_check) member_soun.eatKimbab()
-            if(is_dameun_kimbap_check) member_dameun.eatKimbab()
-            if(is_eunju_kimbap_check) member_eunju.eatKimbab()
-            if(is_hyundong_kimbap_check) member_hyundong.eatKimbab()
-            if(is_soun_water_check) member_soun.drinkWater()
-            if(is_dameun_water_check) member_dameun.drinkWater()
-            if(is_eunju_water_check) member_eunju.drinkWater()
-            if(is_hyundong_water_check) member_hyundong.drinkWater()
+            if (is_soun_kimbap_check) member_soun.eatKimbab()
+            if (is_dameun_kimbap_check) member_dameun.eatKimbab()
+            if (is_eunju_kimbap_check) member_eunju.eatKimbab()
+            if (is_hyundong_kimbap_check) member_hyundong.eatKimbab()
+            if (is_soun_water_check) member_soun.drinkWater()
+            if (is_dameun_water_check) member_dameun.drinkWater()
+            if (is_eunju_water_check) member_eunju.drinkWater()
+            if (is_hyundong_water_check) member_hyundong.drinkWater()
         }
 
         // 페이지 초기화 메소드
@@ -340,20 +376,20 @@ class GameActivity : BaseActivity() {
         // event type : OX or Item ??
         fun setEventType() {
             // 이벤트 타입 파악
-            if(selectedEvent.type == 1) {
+            if (selectedEvent.type == 1) {
                 is_ox_event = true
                 is_item_event = false
-            } else if(selectedEvent.type == 0) {
+            } else if (selectedEvent.type == 0) {
                 is_ox_event = false
                 is_item_event = true
             }
             // 이벤트 타입에 따른 버튼 View 설정
-            if(is_ox_event) { // OX 이벤트의 경우
+            if (is_ox_event) { // OX 이벤트의 경우
                 pre_event_o_button.visibility = View.VISIBLE
                 pre_event_x_button.visibility = View.VISIBLE
                 item_choose_button.visibility = View.GONE
                 finishbutton.visibility = View.GONE
-            } else if(is_item_event) { // item 이벤트의 경우
+            } else if (is_item_event) { // item 이벤트의 경우
                 pre_event_o_button.visibility = View.GONE
                 pre_event_x_button.visibility = View.GONE
                 item_choose_button.visibility = View.VISIBLE
@@ -363,7 +399,7 @@ class GameActivity : BaseActivity() {
                 var itemTmp = itemList.find { it.nameItem == selectedEvent.selectionItem }
                 if (itemTmp != null) {
                     item_choose_button.setImageResource(itemTmp.itmeIconRes)
-                    if(itemTmp.getIsOwned()) item_choose_button.isEnabled = true
+                    if (itemTmp.getIsOwned()) item_choose_button.isEnabled = true
                     else item_choose_button.isEnabled = false
                 } else {
                     item_choose_button.setImageResource(R.drawable.o_icon)
@@ -382,46 +418,154 @@ class GameActivity : BaseActivity() {
         // 응급상자 클릭 리스너
         dameun_medkit.setOnClickListener {
             is_dameun_medkit_check = !is_dameun_medkit_check
-            dameun_medkit.alpha = if (is_dameun_medkit_check) 1f else 0.5f }
-        soun_medkit.setOnClickListener{
+            dameun_medkit.alpha = if (is_dameun_medkit_check) 1f else 0.5f
+        }
+        soun_medkit.setOnClickListener {
             is_soun_medkit_check = !is_soun_medkit_check
-            soun_medkit.alpha = if (is_soun_medkit_check) 1f else 0.5f }
-        eunju_medkit.setOnClickListener{
+            soun_medkit.alpha = if (is_soun_medkit_check) 1f else 0.5f
+        }
+        eunju_medkit.setOnClickListener {
             is_eunju_medkit_check = !is_eunju_medkit_check
-            eunju_medkit.alpha = if (is_eunju_medkit_check) 1f else 0.5f }
-        hyundong_medkit.setOnClickListener{
+            eunju_medkit.alpha = if (is_eunju_medkit_check) 1f else 0.5f
+        }
+        hyundong_medkit.setOnClickListener {
             is_hyundong_medkit_check = !is_hyundong_medkit_check
-            hyundong_medkit.alpha = if (is_hyundong_medkit_check) 1f else 0.5f }
+            hyundong_medkit.alpha = if (is_hyundong_medkit_check) 1f else 0.5f
+        }
 
         // 김밥, 물 클릭 리스너
         soun_kimbap.setOnClickListener {
-            is_soun_kimbap_check = !is_soun_kimbap_check
-            soun_kimbap.alpha = if (is_soun_kimbap_check) 1f else 0.5f }
+            // 이미 할당된 상태라면, 취소하는 것을 허용
+            if (is_soun_kimbap_check) {
+                is_soun_kimbap_check = false
+                soun_kimbap.alpha = 0.5f
+                food_kimbap.count += 0.25
+            }
+            // 할당되지 않은 상태이고, 아이템 수량이 충분하다면 할당을 허용
+            else if (food_kimbap.count > 0) {
+                is_soun_kimbap_check = true
+                soun_kimbap.alpha = 1f
+                food_kimbap.count -= 0.25
+            }
+            updateFoodText()
+        }
+
         dameun_kimbap.setOnClickListener {
-            is_dameun_kimbap_check = !is_dameun_kimbap_check
-            dameun_kimbap.alpha = if (is_dameun_kimbap_check) 1f else 0.5f }
+            // 이미 할당된 상태라면, 취소하는 것을 허용
+            if (is_dameun_kimbap_check) {
+                is_dameun_kimbap_check = false
+                dameun_kimbap.alpha = 0.5f
+                food_kimbap.count += 0.25
+            }
+            // 할당되지 않은 상태이고, 아이템 수량이 충분하다면 할당을 허용
+            else if (food_kimbap.count > 0) {
+                is_dameun_kimbap_check = true
+                dameun_kimbap.alpha = 1f
+                food_kimbap.count -= 0.25
+            }
+            updateFoodText()
+        }
+
         eunju_kimbap.setOnClickListener {
-            is_eunju_kimbap_check = !is_eunju_kimbap_check
-            eunju_kimbap.alpha = if (is_eunju_kimbap_check) 1f else 0.5f }
+            // 이미 할당된 상태라면, 취소하는 것을 허용
+            if (is_eunju_kimbap_check) {
+                is_eunju_kimbap_check = false
+                eunju_kimbap.alpha = 0.5f
+                food_kimbap.count += 0.25
+            }
+            // 할당되지 않은 상태이고, 아이템 수량이 충분하다면 할당을 허용
+            else if (food_kimbap.count > 0) {
+                is_eunju_kimbap_check = true
+                eunju_kimbap.alpha = 1f
+                food_kimbap.count -= 0.25
+            }
+            updateFoodText()
+        }
+
         hyundong_kimbap.setOnClickListener {
-            is_hyundong_kimbap_check = !is_hyundong_kimbap_check
-            hyundong_kimbap.alpha = if (is_hyundong_kimbap_check) 1f else 0.5f }
+            // 이미 할당된 상태라면, 취소하는 것을 허용
+            if (is_hyundong_kimbap_check) {
+                is_hyundong_kimbap_check = false
+                hyundong_kimbap.alpha = 0.5f
+                food_kimbap.count += 0.25
+            }
+            // 할당되지 않은 상태이고, 아이템 수량이 충분하다면 할당을 허용
+            else if (food_kimbap.count > 0) {
+                is_hyundong_kimbap_check = true
+                hyundong_kimbap.alpha = 1f
+                food_kimbap.count -= 0.25
+            }
+            updateFoodText()
+        }
+
         soun_water.setOnClickListener {
-            is_soun_water_check = !is_soun_water_check
-            soun_water.alpha = if (is_soun_water_check) 1f else 0.5f }
+            // 이미 할당된 상태라면, 취소하는 것을 허용
+            if (is_soun_water_check) {
+                is_soun_water_check = false
+                soun_water.alpha = 0.5f
+                food_water.count += 0.25
+            }
+            // 할당되지 않은 상태이고, 아이템 수량이 충분하다면 할당을 허용
+            else if (food_water.count > 0) {
+                is_soun_water_check = true
+                soun_water.alpha = 1f
+                food_water.count -= 0.25
+            }
+            updateFoodText()
+        }
+
         dameun_water.setOnClickListener {
-            is_dameun_water_check = !is_dameun_water_check
-            dameun_water.alpha = if (is_dameun_water_check) 1f else 0.5f }
+            // 이미 할당된 상태라면, 취소하는 것을 허용
+            if (is_dameun_water_check) {
+                is_dameun_water_check = false
+                dameun_water.alpha = 0.5f
+                food_water.count += 0.25
+            }
+            // 할당되지 않은 상태이고, 아이템 수량이 충분하다면 할당을 허용
+            else if (food_water.count > 0) {
+                is_dameun_water_check = true
+                dameun_water.alpha = 1f
+                food_water.count -= 0.25
+            }
+            updateFoodText()
+        }
+
         eunju_water.setOnClickListener {
-            is_eunju_water_check = !is_eunju_water_check
-            eunju_water.alpha = if (is_eunju_water_check) 1f else 0.5f }
+            // 이미 할당된 상태라면, 취소하는 것을 허용
+            if (is_eunju_water_check) {
+                is_eunju_water_check = false
+                eunju_water.alpha = 0.5f
+                food_water.count += 0.25
+            }
+            // 할당되지 않은 상태이고, 아이템 수량이 충분하다면 할당을 허용
+            else if (food_water.count > 0) {
+                is_eunju_water_check = true
+                eunju_water.alpha = 1f
+                food_water.count -= 0.25
+            }
+            updateFoodText()
+        }
+
         hyundong_water.setOnClickListener {
-            is_hyundong_water_check = !is_hyundong_water_check
-            hyundong_water.alpha = if (is_hyundong_water_check) 1f else 0.5f }
+            // 이미 할당된 상태라면, 취소하는 것을 허용
+            if (is_hyundong_water_check) {
+                is_hyundong_water_check = false
+                hyundong_water.alpha = 0.5f
+                food_water.count += 0.25
+            }
+            // 할당되지 않은 상태이고, 아이템 수량이 충분하다면 할당을 허용
+            else if (food_water.count > 0) {
+                is_hyundong_water_check = true
+                hyundong_water.alpha = 1f
+                food_water.count -= 0.25
+            }
+            updateFoodText()
+        }
+
 
         // item 이벤트 - 클릭 리스너
         item_choose_button.setOnClickListener {
-            if(choose_value == false){
+            if (choose_value == false) {
                 choose_value = true
                 item_choose_button.alpha = 1f
             } else {
@@ -488,6 +632,7 @@ class GameActivity : BaseActivity() {
             updateAllVisibility() // 아이템, 멤버, 식량 visivility 업데이트
 
             current_page = 1
+            updateFoodText()
         }
     }
 
@@ -497,8 +642,8 @@ class GameActivity : BaseActivity() {
 
     fun randomizeItems() {
         // 식량 랜덤으로 생성
-        food_kimbap.getFoodRandom(3,5)
-        food_water.getFoodRandom(3,5)
+        food_kimbap.getFoodRandom(3, 6)
+        food_water.getFoodRandom(3, 6)
 
         // 아이템을 랜덤으로 6개 골라 얻음
         val randomItems = itemList.shuffled().take(6)
@@ -587,7 +732,8 @@ class GameActivity : BaseActivity() {
         toPage.visibility = View.VISIBLE
     }
 
-    fun getItemChooseButton(): ImageButton {
-        return item_choose_button
+    fun updateFoodText() {
+        water_amount_text.setText("남은 물 " + food_water.count.toDouble() + "병")
+        kimbap_amount_text.setText("남은 김밥 " + food_kimbap.count.toDouble() + "줄")
     }
 }

@@ -58,98 +58,124 @@
                 app:layout_constraintEnd_toEndOf="@id/guide_line"
                 app:layout_constraintTop_toBottomOf="@id/guide_line"
                 android:fontFamily="@font/nanum3"
-                android:textSize="15dp"
+                android:textSize="10pt"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
-                android:text="만일 오늘 탐험을 나간다면..."
+                android:text="누군가는 밖에서 물자를 구해와야한다."
                 android:textColor="@color/black"
                 />
 
             <ImageView
-                android:id="@+id/water_icon"
+                android:id="@+id/member_choose_guide_line"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/water_icon"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/dameun_condition_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/travel_text"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginLeft="10dp"
-                app:layout_constraintHeight_percent="0.13"
-                app:layout_constraintWidth_percent="0.06"
-                android:background="@null"
-                />
-
-            <TextView
-                android:id="@+id/about_water"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/water_icon"
-                app:layout_constraintTop_toTopOf="@id/water_icon"
-                app:layout_constraintBottom_toBottomOf="@id/water_icon"
-                android:fontFamily="@font/nanum3"
-                android:textSize="15dp"
+                android:text="담은은 어쩌구"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:text="물을 1개 이상 얻을 수 있을 것 같다."
                 android:textColor="@color/black"
                 />
 
-            <ImageView
-                android:id="@+id/kimbap_icon"
+            <TextView
+                android:id="@+id/eunju_condition_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dameun_condition_text"
+                android:text="은주는 어쩌구"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/soun_condition_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/eunju_condition_text"
+                android:text="소운은 어쩌구"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/hyundong_condition_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/soun_condition_text"
+                android:text="현동은 어쩌구"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/black"
+                />
+
+            <ImageButton
+                android:id="@+id/travel_eunju"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/kimbap_icon"
-                app:layout_constraintTop_toBottomOf="@id/water_icon"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                app:layout_constraintHeight_percent="0.05"
-                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintEnd_toStartOf="@id/member_choose_guide_line"
+                app:layout_constraintBottom_toTopOf="@id/member_choose_guide_line"
+                android:src="@drawable/eunju_head_ok"
                 android:background="@null"
                 />
 
-            <TextView
-                android:id="@+id/about_kimbap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/kimbap_icon"
-                app:layout_constraintTop_toTopOf="@id/kimbap_icon"
-                app:layout_constraintBottom_toBottomOf="@id/kimbap_icon"
-                android:fontFamily="@font/nanum3"
-                android:textSize="15dp"
-                android:layout_marginLeft="10dp"
-                android:text="식량을 2개 이상 얻을 수 있을 것 같다."
-                android:textColor="@color/black"
-                />
-
-            <ImageView
-                android:id="@+id/question_mark_icon"
+            <ImageButton
+                android:id="@+id/travel_dameun"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/question_mark"
-                app:layout_constraintTop_toBottomOf="@id/kimbap_icon"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                app:layout_constraintHeight_percent="0.12"
-                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintEnd_toStartOf="@id/travel_eunju"
+                app:layout_constraintBottom_toTopOf="@id/member_choose_guide_line"
+                android:src="@drawable/dameun_head_ok"
+                android:layout_marginRight="20dp"
                 android:background="@null"
                 />
 
-            <TextView
-                android:id="@+id/about_item"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/question_mark_icon"
-                app:layout_constraintTop_toTopOf="@id/question_mark_icon"
-                app:layout_constraintBottom_toBottomOf="@id/question_mark_icon"
-                android:fontFamily="@font/nanum3"
-                android:textSize="15dp"
-                android:layout_marginLeft="10dp"
-                android:text="어떤 물품을 1개 이상 얻을 수 있을 것 같다."
-                android:textColor="@color/black"
+            <ImageButton
+                android:id="@+id/travel_hyundong"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintStart_toEndOf="@id/travel_soun"
+                app:layout_constraintBottom_toTopOf="@id/member_choose_guide_line"
+                android:src="@drawable/hyundong_head_ok"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/travel_soun"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintStart_toEndOf="@id/member_choose_guide_line"
+                app:layout_constraintBottom_toTopOf="@id/member_choose_guide_line"
+                android:src="@drawable/soun_head_ok"
+                android:background="@null"
                 />
 
             <ImageButton

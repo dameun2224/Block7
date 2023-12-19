@@ -26,7 +26,7 @@ class Event_independence_ox_fightEunjuHyundong(GameActivity: GameActivity, event
             // 90확률로 식량을 잃음
             if (randomValue < 0.9) {
                 var selectedFood = GameActivity.selectRandomFood()
-                selectedFood.loseFoodRandom(1,3)
+                selectedFood.loseFoodRandom(1,2)
             }
         }
         else { // 현동 고를경우

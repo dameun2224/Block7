@@ -13,7 +13,7 @@ class Food(GameActivity: GameActivity, nameFood: String, nameKorFood: String, fo
     var foodImage = foodImage
 
     // 식량 개수
-    var count: Int = 0
+    var count: Double = 0.0
 
     // 식량 획득 메소드
     fun getFood(cnt: Int) {
@@ -22,7 +22,7 @@ class Food(GameActivity: GameActivity, nameFood: String, nameKorFood: String, fo
 
     // 식량 소모 메소드
     fun loseFood(cnt: Int) {
-        count = maxOf(0, count - cnt)
+        count = maxOf(0.0, count - cnt)
     }
 
     fun getFoodRandom(start: Int, end: Int) {
@@ -42,27 +42,27 @@ class Food(GameActivity: GameActivity, nameFood: String, nameKorFood: String, fo
         var resourceId = 0
         if(nameFood == "kimbap") {
             resourceId = when (count) {
-                1 -> R.drawable.food_kimbap_1
-                2 -> R.drawable.food_kimbap_2
-                3 -> R.drawable.food_kimbap_3
-                4 -> R.drawable.food_kimbap_4
-                5 -> R.drawable.food_kimbap_5
-                6 -> R.drawable.food_kimbap_6
+                1.0 -> R.drawable.food_kimbap_1
+                2.0 -> R.drawable.food_kimbap_2
+                3.0 -> R.drawable.food_kimbap_3
+                4.0 -> R.drawable.food_kimbap_4
+                5.0 -> R.drawable.food_kimbap_5
+                6.0 -> R.drawable.food_kimbap_6
                 else -> R.drawable.food_kimbap_1
             }
-            if(count == 0) foodImage.visibility = View.GONE
+            if(count == 0.0) foodImage.visibility = View.GONE
             else GameActivity.findViewById<ImageView>(R.id.food_kimbap).setImageResource(resourceId)
         } else if(nameFood == "water") {
             resourceId = when (count) {
-                1 -> R.drawable.food_water_1
-                2 -> R.drawable.food_water_2
-                3 -> R.drawable.food_water_3
-                4 -> R.drawable.food_water_4
-                5 -> R.drawable.food_water_5
-                6 -> R.drawable.food_water_6
+                1.0 -> R.drawable.food_water_1
+                2.0 -> R.drawable.food_water_2
+                3.0 -> R.drawable.food_water_3
+                4.0 -> R.drawable.food_water_4
+                5.0 -> R.drawable.food_water_5
+                6.0 -> R.drawable.food_water_6
                 else -> R.drawable.food_kimbap_1
             }
-            if(count == 0) foodImage.visibility = View.GONE
+            if(count == 0.0) foodImage.visibility = View.GONE
             else GameActivity.findViewById<ImageView>(R.id.food_water).setImageResource(resourceId)
         }
     }
