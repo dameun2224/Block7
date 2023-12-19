@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/page2"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 배경 비율 조절을 위한 ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratio_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/survival_note"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintWidth_percent="0.6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/survival_note_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/window_note" />
+
+            <ImageView
+                android:id="@+id/guide_line"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="1"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintTop_toTopOf="@id/survival_note_background"
+                app:layout_constraintStart_toStartOf="@id/survival_note_background"
+                android:background="@null"
+                />
+
+            <ImageView
+                android:id="@+id/ration_text"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintStart_toStartOf="@id/guide_line"
+                app:layout_constraintTop_toBottomOf="@id/guide_line"
+                android:fontFamily="@font/nanum3"
+                android:textSize="13pt"
+
+                android:textColor="@color/black"
+                />
+
+            <ImageView
+                android:id="@+id/character_head_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/ration_text"
+                app:layout_constraintStart_toStartOf="@id/survival_note"
+                app:layout_constraintEnd_toEndOf="@id/survival_note"
+                />
+
+            <ImageButton
+                android:id="@+id/ration_eunju"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintTop_toBottomOf="@id/character_head_guideline"
+                app:layout_constraintEnd_toEndOf="@id/character_head_guideline"
+                android:src="@drawable/eunju_head_ok"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="10dp"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/eunju_kimbap_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/kimbap_icon"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintStart_toStartOf="@id/ration_eunju"
+                app:layout_constraintTop_toTopOf="@id/eunju_water_check"
+                app:layout_constraintBottom_toBottomOf="@id/eunju_water_check"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/eunju_water_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/water_icon"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintEnd_toEndOf="@id/ration_eunju"
+                app:layout_constraintTop_toBottomOf="@id/ration_eunju"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/eunju_medkit_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_medkit"
+                app:layout_constraintStart_toStartOf="@id/ration_eunju"
+                app:layout_constraintEnd_toEndOf="@id/ration_eunju"
+                app:layout_constraintBottom_toTopOf="@id/ration_eunju"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/ration_soun"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintTop_toBottomOf="@id/character_head_guideline"
+                app:layout_constraintStart_toStartOf="@id/character_head_guideline"
+                android:src="@drawable/soun_head_ok"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/soun_kimbap_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/kimbap_icon"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintStart_toStartOf="@id/ration_soun"
+                app:layout_constraintTop_toTopOf="@id/soun_water_check"
+                app:layout_constraintBottom_toBottomOf="@id/soun_water_check"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/soun_water_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/water_icon"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintEnd_toEndOf="@id/ration_soun"
+                app:layout_constraintTop_toBottomOf="@id/ration_soun"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+            <ImageButton
+                android:id="@+id/soun_medkit_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_medkit"
+                app:layout_constraintStart_toStartOf="@id/ration_soun"
+                app:layout_constraintEnd_toEndOf="@id/ration_soun"
+                app:layout_constraintBottom_toTopOf="@id/ration_soun"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/ration_dameun"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintTop_toTopOf="@id/ration_eunju"
+                app:layout_constraintEnd_toStartOf="@id/ration_eunju"
+                android:src="@drawable/dameun_head_ok"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="20dp"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/dameun_kimbap_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/kimbap_icon"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintStart_toStartOf="@id/ration_dameun"
+                app:layout_constraintTop_toTopOf="@id/dameun_water_check"
+                app:layout_constraintBottom_toBottomOf="@id/dameun_water_check"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/dameun_water_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/water_icon"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintEnd_toEndOf="@id/ration_dameun"
+                app:layout_constraintTop_toBottomOf="@id/ration_dameun"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/dameun_medkit_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_medkit"
+                app:layout_constraintStart_toStartOf="@id/ration_dameun"
+                app:layout_constraintEnd_toEndOf="@id/ration_dameun"
+                app:layout_constraintBottom_toTopOf="@id/ration_dameun"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/ration_hyundong"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintTop_toTopOf="@id/ration_eunju"
+                app:layout_constraintStart_toEndOf="@id/ration_soun"
+                android:src="@drawable/hyundong_head_ok"
+                android:scaleType="centerCrop"
+                android:layout_marginLeft="20dp"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/hyundong_kimbap_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/kimbap_icon"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintStart_toStartOf="@id/ration_hyundong"
+                app:layout_constraintTop_toTopOf="@id/hyundong_water_check"
+                app:layout_constraintBottom_toBottomOf="@id/hyundong_water_check"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/hyundong_water_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/water_icon"
+                app:layout_constraintHeight_percent="0.13"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintEnd_toEndOf="@id/ration_hyundong"
+                app:layout_constraintTop_toBottomOf="@id/ration_hyundong"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/hyundong_medkit_check"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_medkit"
+                app:layout_constraintStart_toStartOf="@id/ration_hyundong"
+                app:layout_constraintEnd_toEndOf="@id/ration_hyundong"
+                app:layout_constraintBottom_toTopOf="@id/ration_hyundong"
+                android:background="@null"
+                android:alpha="0.5"
+                />
+
+
+            <ImageButton
+                android:id="@+id/next_button_page2to3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/next_button"
+                android:background="@null"
+                />
+
+
+            <ImageButton
+                android:id="@+id/previous_button_page2to1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/previous_button"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/close_button_page2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@null"
+                />
+
+            <ImageView
+                android:id="@+id/text_guideline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.05"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="20dp"
+                />
+
+            <ImageView
+                android:id="@+id/water_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintHeight_percent="0.13"
+                android:src="@drawable/water_icon"
+                app:layout_constraintBottom_toBottomOf="@id/current_water"
+                app:layout_constraintTop_toTopOf="@id/current_water"
+                app:layout_constraintEnd_toStartOf="@id/current_water"
+
+                />
+
+            <TextView
+                android:id="@+id/current_water"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/text_guideline"
+                app:layout_constraintEnd_toStartOf="@id/text_guideline"
+                android:text="남은 물 2.75병"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanum3"
+                />
+
+            <ImageView
+                android:id="@+id/kimbap_icon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintHeight_percent="0.13"
+                android:src="@drawable/kimbap_icon"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="@id/current_water"
+                app:layout_constraintTop_toTopOf="@id/current_water"
+                app:layout_constraintStart_toEndOf="@id/text_guideline"
+                />
+
+            <TextView
+                android:id="@+id/current_kimbap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/current_water"
+                app:layout_constraintStart_toEndOf="@id/kimbap_icon"
+                android:text="남은 김밥 2.75줄"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nanum3"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

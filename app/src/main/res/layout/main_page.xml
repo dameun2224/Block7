@@ -1,0 +1,145 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratio_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/start_background"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/selected_gamestart"
+            android:src="@drawable/sgamestart"
+            />
+
+        <!-- selected_option -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/selected_option"
+            android:src="@drawable/soption"
+           />
+
+        <!-- selected_achive -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/selected_achive"
+            android:src="@drawable/sachievement"
+           />
+
+        <!-- selected_more -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/selected_more"
+            android:src="@drawable/smore"
+            />
+
+        <!-- selected_exit -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/selected_exit"
+            android:src="@drawable/squit"
+           />
+
+
+        <ImageButton
+            android:id="@+id/startGame"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.15"
+            android:background="@null"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:layout_constraintStart_toEndOf="@id/guideline"
+            android:clickable="true"
+            android:contentDescription="Start Game"
+            android:onClick="onStartGameClick"
+            android:tag="startGameTag"
+             />
+
+        <ImageButton
+            android:id="@+id/option_game"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.15"
+            android:background="@null"
+            app:layout_constraintTop_toBottomOf="@id/startGame"
+            app:layout_constraintStart_toStartOf="@id/startGame"
+            android:tag="optionGameTag"
+            android:contentDescription="Game Options"
+            android:onClick="onOptionClick"
+            />
+
+        <ImageButton
+            android:id="@+id/achieve"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.15"
+            app:layout_constraintTop_toBottomOf="@id/option_game"
+            app:layout_constraintStart_toStartOf="@id/option_game"
+            android:background="@null"
+            android:contentDescription="Achievements"
+            android:tag="achieveTag"
+            android:onClick="onAchievementsClick"
+            />
+
+
+
+        <ImageButton
+            android:id="@+id/people"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.15"
+            android:background="@null"
+            app:layout_constraintTop_toBottomOf="@id/option_game"
+            app:layout_constraintStart_toStartOf="@id/option_game"
+            android:tag="peopleTag"
+            android:contentDescription="More Options"
+            android:onClick="onMoreClick"
+            />
+
+        <ImageButton
+            android:id="@+id/Cancel"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.15"
+            android:background="@null"
+            app:layout_constraintTop_toBottomOf="@id/people"
+            app:layout_constraintStart_toStartOf="@id/people"
+            android:tag="cancelTag"
+            android:contentDescription="Cancel"
+            android:onClick="onQuitClick"
+            />
+        
+        <FrameLayout
+            android:id="@+id/guideline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.35"
+            app:layout_constraintWidth_percent="0.15"
+            android:background="@null"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/page4"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 배경 비율 조절을 위한 ConstraintLayout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratio_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/survival_note"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintWidth_percent="0.6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            >
+
+            <ImageView
+                android:id="@+id/survival_note_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/window_note" />
+
+            <ImageView
+                android:id="@+id/guide_line"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="1"
+                app:layout_constraintHeight_percent="0.17"
+                app:layout_constraintTop_toTopOf="@id/survival_note_background"
+                app:layout_constraintStart_toStartOf="@id/survival_note_background"
+                android:background="@null"
+                />
+
+            <TextView
+                android:id="@+id/pre_event_script"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/guide_line"
+                android:fontFamily="@font/nanum2"
+                android:textSize="13dp"
+                android:text="여기에 텍스트를 넣습니다."
+                android:textColor="@color/black"
+                />
+
+            <ImageView
+                android:id="@+id/guideline_ox"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <ImageButton
+                android:id="@+id/item_choose_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="@id/guideline_ox"
+                app:layout_constraintEnd_toEndOf="@id/guideline_ox"
+                app:layout_constraintBottom_toTopOf="@id/guideline_ox"
+                app:layout_constraintWidth_percent="0.2"
+                app:layout_constraintHeight_percent="0.3"
+                android:scaleType="fitXY"
+                android:alpha="0.5"
+                android:src="@drawable/book_icon"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/o_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintEnd_toStartOf="@id/guideline_ox"
+                app:layout_constraintBottom_toTopOf="@id/guideline_ox"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/o_icon"
+                android:alpha="0.5"
+                />
+
+
+            <ImageButton
+                android:id="@+id/x_button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/x_icon"
+                app:layout_constraintBottom_toTopOf="@id/guideline_ox"
+                app:layout_constraintHeight_percent="0.18"
+                app:layout_constraintWidth_percent="0.12"
+                app:layout_constraintStart_toEndOf="@id/guideline_ox"
+                android:alpha="0.5"
+                />
+
+            <ImageButton
+                android:id="@+id/next_button_toend"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/next_button"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/previous_button_page4to3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintHeight_percent="0.15"
+                app:layout_constraintWidth_percent="0.1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/previous_button"
+                android:background="@null"
+                />
+
+            <ImageButton
+                android:id="@+id/close_button_page4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.06"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@null"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

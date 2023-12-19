@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/note_frame"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ratio_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="2:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <FrameLayout
+            android:id="@+id/note"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.9"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/yellow">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/textViewNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:gravity="start|top"
+            android:text="여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n
+여기에 텍스트를 입력하세요... \n"
+            />
+
+            </ScrollView>
+    </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
