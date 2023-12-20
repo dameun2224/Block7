@@ -1,8 +1,10 @@
 package com.cookandroid.block7
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
-import android.provider.Settings.Global
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageButton
@@ -28,6 +30,9 @@ class MainPage : BaseActivity() {
         var explanation_button : ImageButton = findViewById(R.id.explanation_button)
         var developers_button : ImageButton = findViewById(R.id.developers_button)
         var quit_button : ImageButton = findViewById(R.id.quit_button)
+
+
+        val array = arrayOf(" ")
 
         gamestart_button.setOnTouchListener { v, event ->
             when (event.action) {
@@ -67,9 +72,11 @@ class MainPage : BaseActivity() {
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                     // 버튼에서 손을 떼었을 때의 원래 이미지로 변경
                     developers_image.setImageResource(R.drawable.menu_developers)
+
                 }
             }
             false
+
         }
 
 
@@ -94,9 +101,23 @@ class MainPage : BaseActivity() {
 
     }
 
-        developers_button.setOnClickListener{
+        developers_button.setOnClickListener {
             click_sound()
+
+            // AlertDialog 생성
+            val alertDialog = AlertDialog.Builder(this)
+                .setTitle(" ")
+                .setItems(array) { dialog: DialogInterface, which: Int ->
+                    val currentItem = array[which]
+                    Log.d("MyTag", "currentItem: $currentItem")
+                }
+                .show()
+
+            // AlertDialog의 Window에 직접 배경 설정
+            val window = alertDialog.window
+            window?.setBackgroundDrawableResource(R.drawable.developer)
         }
+
 
 
         quit_button.setOnTouchListener { v, event ->
@@ -112,6 +133,7 @@ class MainPage : BaseActivity() {
             }
             false
         }
+
 
 
 
@@ -168,6 +190,7 @@ class MainPage : BaseActivity() {
             option_dialog.visibility = View.GONE
         }
 
+
         applyButton.setOnClickListener {
 
             val musicVolumeForDB = musicVolumeControl.progress
@@ -198,7 +221,10 @@ class MainPage : BaseActivity() {
             startService(serviceIntent)
         }
 
+
     }
+
+
 
     override fun onDestroy() {
         super.onDestroy()
@@ -211,4 +237,5 @@ class MainPage : BaseActivity() {
         startService(music_intent)
     }
 }
+
 
