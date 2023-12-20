@@ -40,6 +40,7 @@ class Member(GameActivity: GameActivity, name: String, nameKor: String, memberVi
     private var isVerySick: Boolean = false
     private var isTired: Boolean = false
     private var isFatigued: Boolean = false
+    private var isPseudo: Boolean = false
 
     private var dateCrazy: Int = 0
     private var dateVeryCrazy: Int = 0
@@ -69,14 +70,21 @@ class Member(GameActivity: GameActivity, name: String, nameKor: String, memberVi
 
     // 하루가 지날때마다 항상 호출되는 메소드. 굶주림 레벨, 목마름 레벨 감소
     fun dayPase() {
+        memberScript = ""
+
         levelHunger = maxOf(0, levelHunger - 10)
         levelThirst = maxOf(0, levelThirst - 15)
 
-        if(levelHunger <= 0) die()
-        if(levelThirst <= 0) die()
+        if(levelHunger <= 0) {
+            die()
+            memberScript = nameKor + "은(는) 더이상 목마르지 않다 ...\n\n"
+        }
+        if(levelThirst <= 0) {
+            die()
+            memberScript = nameKor + "은(는) 더이상 배고프지 않다 ...\n\n"
+        }
 
         /* 나머지 부분 구현 */
-
         updateMember()
     }
 
@@ -174,6 +182,7 @@ class Member(GameActivity: GameActivity, name: String, nameKor: String, memberVi
     fun getStateFatigued(): String { return stateFatigued }
 
     fun getIsIn(): Boolean { return isIn }
+    fun getIsAlive(): Boolean { return isAlive }
 
     fun isNeedMedkit(): Boolean { return isHurt||isVeryHurt||isSick||isVerySick }
 
@@ -181,24 +190,29 @@ class Member(GameActivity: GameActivity, name: String, nameKor: String, memberVi
 
     // 멤버 Script 업데이트.
     fun updateScript() {
+        if(!isAlive) return
+
         memberScript = ""
-        if (isCrazy) memberScript += nameKor + "은(는) 미쳤다.\n"
-        if (isVeryCrazy) memberScript += nameKor + "은(는) 착란한다.\n"
-        if (isHurt) memberScript += nameKor + "은(는) 다쳤다.\n"
-        if (isVeryHurt) memberScript += nameKor + "은(는) 고통받는다.\n"
-        if (isSick) memberScript += nameKor + "은(는) 질병에 걸렸다.\n"
-        if (isVerySick) memberScript += nameKor + "은(는) 병에 걸렸다.\n"
-        if (isTired) memberScript += nameKor + "은(는) 지쳤다.\n"
-        if (isFatigued) memberScript += nameKor + "은(는) 매우 지쳤다.\n"
+
         if(stateHunger == "배고픔") memberScript += nameKor + "은(는) 배고프다.\n"
         else if(stateHunger == "굶주림") memberScript += nameKor + "은(는) 굶주렸다.\n"
         if(stateThirst == "목마름") memberScript += nameKor + "은(는) 목마르다.\n"
         else if(stateThirst == "탈수") memberScript += nameKor + "은(는) 탈수 상태다.\n"
 
+        if (isVeryCrazy) memberScript += nameKor + "은(는) 착란한다.\n"
+        else if (isCrazy) memberScript += nameKor + "은(는) 미쳤다.\n"
+        if (isVeryHurt) memberScript += nameKor + "은(는) 고통받는다.\n"
+        else if (isHurt) memberScript += nameKor + "은(는) 다쳤다.\n"
+        if (isVerySick) memberScript += nameKor + "은(는) 병에 걸렸다.\n"
+        else if (isSick) memberScript += nameKor + "은(는) 질병에 걸렸다.\n"
+        if (isFatigued) memberScript += nameKor + "은(는) 매우 지쳤다.\n"
+        else if (isTired) memberScript += nameKor + "은(는) 지쳤다.\n"
+        if(isPseudo) memberScript += nameKor + "은(는) 포교당했다.\n"
+
         // 안에 있지 않거나, 살아있지 않다면
-        if (!isIn) memberScript = nameKor + "은(는) 아직 돌아오지 않았다.\n"
-        if(!isAlive) memberScript = ""
-        else memberScript += "\n"
+        if (isExploring && isAlive) memberScript = nameKor + "은(는) 아직 돌아오지 않았다.\n"
+
+        memberScript += "\n"
     }
 
     // date 업데이트 - 수정 필요, 임의로 작성함
@@ -219,43 +233,69 @@ class Member(GameActivity: GameActivity, name: String, nameKor: String, memberVi
         // 살아있고, 탐험 가지 않았다면 보이게
         if(isAlive && isIn) memberView.visibility = View.VISIBLE
         // 살아있지 않거나, 탐험 갔다면 보이지 않게
-        else if(!isAlive || !isIn) memberView.visibility = View.GONE
-        // 상태 변화 추가 (미침, 지침, 다침, 외계인 등 ..)
-        if(isTired || isFatigued) {
-            when (nameKor) {
-                "담은" -> memberView.setImageResource(R.drawable.member_dameun_tired)
-                "소운" -> memberView.setImageResource(R.drawable.member_soun_tired)
-                "현동" -> memberView.setImageResource(R.drawable.member_hyundong_tired)
-                "은주" -> memberView.setImageResource(R.drawable.member_eunju_tired)
-                else -> true
+        else if(!isIn || isExploring) memberView.visibility = View.GONE
+
+        if(isAlive) { // 살아있다면
+            // 순서 : 우선순위의 반대
+            // 1.특수 (은주 외계인, 담은 종교)  2.미침  3.다침  4.아픔  5.지침
+            if(isPseudo) {
+                when (nameKor) {
+                    "소운" -> memberView.setImageResource(R.drawable.member_soun_pseudo)
+                    "현동" -> memberView.setImageResource(R.drawable.member_hyundong_pseudo)
+                    "은주" -> memberView.setImageResource(R.drawable.member_eunju_pseudo)
+                    else -> true
+                }
             }
+            if(isTired || isFatigued) {
+                when (nameKor) {
+                    "담은" -> memberView.setImageResource(R.drawable.member_dameun_tired)
+                    "소운" -> memberView.setImageResource(R.drawable.member_soun_tired)
+                    "현동" -> memberView.setImageResource(R.drawable.member_hyundong_tired)
+                    "은주" -> memberView.setImageResource(R.drawable.member_eunju_tired)
+                    else -> true
+                }
+            }
+            if(isSick || isVerySick) {
+                when (nameKor) {
+                    "담은" -> memberView.setImageResource(R.drawable.member_dameun_sick)
+                    "소운" -> memberView.setImageResource(R.drawable.member_soun_sick)
+                    "현동" -> memberView.setImageResource(R.drawable.member_hyundong_sick)
+                    "은주" -> memberView.setImageResource(R.drawable.member_eunju_sick)
+                    else -> true
+                }
+            }
+            if(isHurt || isVeryHurt) {
+                when (nameKor) {
+                    "담은" -> memberView.setImageResource(R.drawable.member_dameun_hurt)
+                    "소운" -> memberView.setImageResource(R.drawable.member_soun_hurt)
+                    "현동" -> memberView.setImageResource(R.drawable.member_hyundong_hurt)
+                    "은주" -> memberView.setImageResource(R.drawable.member_eunju_hurt)
+                    else -> true
+                }
+            }
+            if(isCrazy || isVeryCrazy) {
+                when (nameKor) {
+                    "담은" -> memberView.setImageResource(R.drawable.member_dameun_crazy)
+                    "소운" -> memberView.setImageResource(R.drawable.member_soun_crazy)
+                    "현동" -> memberView.setImageResource(R.drawable.member_hyundong_crazy)
+                    "은주" -> memberView.setImageResource(R.drawable.member_eunju_crazy)
+                    else -> true
+                }
+            }
+            if(nameKor=="은주" && isAlien) memberView.setImageResource(R.drawable.member_eunju_alien)
+            if(nameKor=="담은" && isPseudo) memberView.setImageResource(R.drawable.member_dameun_pseudo)
         }
-        if(isSick || isVerySick) {
-            when (nameKor) {
-                "담은" -> memberView.setImageResource(R.drawable.member_dameun_sick)
-                "소운" -> memberView.setImageResource(R.drawable.member_soun_sick)
-                "현동" -> memberView.setImageResource(R.drawable.member_hyundong_sick)
-                "은주" -> memberView.setImageResource(R.drawable.member_eunju_sick)
-                else -> true
+        else { // 죽었다면
+            if(isIn) {
+                when (nameKor) {
+                    "담은" -> memberView.setImageResource(R.drawable.member_dameun_dead)
+                    "소운" -> memberView.setImageResource(R.drawable.member_soun_dead)
+                    "현동" -> memberView.setImageResource(R.drawable.member_hyundong_dead)
+                    "은주" -> memberView.setImageResource(R.drawable.member_eunju_dead)
+                    else -> true
+                }
             }
-        }
-        if(isCrazy || isVeryCrazy) {
-            when (nameKor) {
-                "담은" -> memberView.setImageResource(R.drawable.member_dameun_crazy)
-                "소운" -> memberView.setImageResource(R.drawable.member_soun_crazy)
-                "현동" -> memberView.setImageResource(R.drawable.member_hyundong_crazy)
-                "은주" -> memberView.setImageResource(R.drawable.member_eunju_crazy)
-                else -> true
-            }
-        }
-        if(isHurt || isVeryHurt) {
-            when (nameKor) {
-                "담은" -> memberView.setImageResource(R.drawable.member_dameun_hurt)
-                "소운" -> memberView.setImageResource(R.drawable.member_soun_hurt)
-                "현동" -> memberView.setImageResource(R.drawable.member_hyundong_hurt)
-                "은주" -> memberView.setImageResource(R.drawable.member_eunju_hurt)
-                else -> true
-            }
+            else if(!isIn || isExploring) memberView.visibility = View.GONE
         }
     }
 

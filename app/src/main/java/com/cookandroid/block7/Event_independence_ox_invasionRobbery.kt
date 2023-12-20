@@ -1,7 +1,7 @@
 package com.cookandroid.block7
 
 // Event_invasion_robbery: 침입 - 강도
-class Event_invasion_robbery(GameActivity: GameActivity, eventName: String,  type: Int, weight: Int, isAvailable: Boolean)
+class Event_independence_ox_invasionRobbery(GameActivity: GameActivity, eventName: String, type: Int, weight: Int, isAvailable: Boolean)
     : Event(GameActivity, eventName, type, weight, isAvailable) {
 
     // 생성자 - 기본 preScript, postScript 설정

@@ -16,10 +16,19 @@ class EventHandler(GameActivity: GameActivity) {
 
     // 클래스의 생성자 또는 초기화 블록
     init {
-        val event_invation_robbery = Event_invasion_robbery(GameActivity, "event_invasion_robbery", typeOX, defaultWeight, defaultIsAvailable)
-        val event_invasion_grandma = Event_invasion_grandma(GameActivity, "event_invasion_grandma", typeOX, defaultWeight, defaultIsAvailable)
-        val event_invasion_firefighter = Event_invasion_firefighter(GameActivity, "event_invasion_firefighter", typeOX, defaultWeight, defaultIsAvailable)
-        val event_plunder_oldMan = Evnet_plunder_oldMan(GameActivity, "evnet_plunder_oldMan", typeOX, defaultWeight, defaultIsAvailable)
+        // 강도 침입 이벤트
+        val event_independence_invasionRobbery = Event_independence_ox_invasionRobbery(GameActivity, "event_independence_invasionRobbery", typeOX, defaultWeight, defaultIsAvailable)
+        // 할머니 침입 이벤트
+        val event_independence_invasionGrandma = Event_independence_ox_invasionGrandma(GameActivity, "event_independence_invasionGrandma", typeOX, defaultWeight, defaultIsAvailable)
+        // 소방관 침입 이벤트
+        val event_independence_invasionFirefighter = Event_independence_ox_invasionFirefighter(GameActivity, "event_independence_invasionFirefighter", typeOX, defaultWeight, defaultIsAvailable)
+        // 노인 약탈 이벤트
+        val event_independence_plunderOldMan = Event_independence_ox_plunderOldMan(GameActivity, "event_independence_plunderOldMan", typeOX, defaultWeight, defaultIsAvailable)
+        // 1호관 동방 약탈 이벤트
+        val event_independence_plunderB1cr = Event_independence_ox_plunderB1cr(GameActivity, "event_independence_plunderB1cr", typeOX, defaultWeight, defaultIsAvailable)
+        // 자취방 약탈 이벤트
+        val event_independence_plunderOtherHome = Event_independence_ox_plunderOtherHome(GameActivity, "event_independence_plunderOtherHome", typeOX, defaultWeight, defaultIsAvailable)
+        // 버려진 탱크?
         val event_independence_abandondTankGetItem = Event_independence_ox_abandondTankGetItem(GameActivity, "event_independence_abandondTankGetItem", typeOX, defaultWeight, defaultIsAvailable)
         val event_independence_abandondTankDie = Event_independence_ox_abandondTankDie(GameActivity, "event_independence_abandondTankDie", typeOX, defaultWeight, defaultIsAvailable)
         val event_independence_goraniHouseGetKimbap = Event_independence_ox_goraniHouseGetKimbap(GameActivity, "event_independence_goraniHouseGetKimbap", typeOX, defaultWeight, defaultIsAvailable)
@@ -54,10 +63,12 @@ class EventHandler(GameActivity: GameActivity) {
         val event_independence_mysteriousKindPerson = Event_independence_mysteriousKindPerson(GameActivity, "event_independence_mysteriousKindPerson", typeOX, defaultWeight, defaultIsAvailable)
         val event_independence_bellRun = Event_independence_ox_bellRun(GameActivity, "event_independence_bellRun", typeOX, defaultWeight, defaultIsAvailable)
 
-        events.add(event_invation_robbery)
-        events.add(event_invasion_grandma)
-        events.add(event_invasion_firefighter)
-        events.add(event_plunder_oldMan)
+        events.add(event_independence_invasionRobbery)
+        events.add(event_independence_invasionGrandma)
+        events.add(event_independence_invasionFirefighter)
+        events.add(event_independence_plunderOldMan)
+        events.add(event_independence_plunderB1cr)
+        events.add(event_independence_plunderOtherHome)
         events.add(event_independence_abandondTankGetItem)
         events.add(event_independence_abandondTankDie)
         events.add(event_independence_goraniHouseGetKimbap)

@@ -10,124 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b56202e-c6cb-40ed-a11b-1e15dffd913e" name="Changes" comment="와쌘즈">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_plunderB1cr.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_plunderOldMan.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_plunderOtherHome.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/member_eunju_alien.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/AchievementsDialog.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/AchievementsDialog.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/BaseActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/CustomApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/CustomApplication.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/EventHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/EventHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_cockroachKingdom.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_cockroachKingdom.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_fire.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_fire.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_flood.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_flood.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_insomnia.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_insomnia.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_povertyStrickenAttack.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_povertyStrickenAttack.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_spiderWorld.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_spiderWorld.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_squeakSqueak.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_squeakSqueak.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_ventilatorOdorToolBox.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_ventilatorOdorToolBox.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_weWantToBathe.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_item_weWantToBathe.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_moreInformationNeeded.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_moreInformationNeeded.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_mysteriousKindPerson.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_mysteriousKindPerson.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_nextRoomOdor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_nextRoomOdor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_abandondTankDie.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_abandondTankDie.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_abandondTankGetItem.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_abandondTankGetItem.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_askWaterFromMedStudents.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_askWaterFromMedStudents.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_bellRun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_bellRun.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_blueGuy.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_blueGuy.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_colorfulMushrooms.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_colorfulMushrooms.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_earthquake.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_earthquake.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_fightDameunEunju.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_fightDameunEunju.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_fightEunjuHyundong.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_fightEunjuHyundong.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_fightSounDameun.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_fightSounDameun.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_fightSounEunju.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_fightSounEunju.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_goraniHouseDie.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_goraniHouseDie.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_goraniHouseGetKimbap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_goraniHouseGetKimbap.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_hiddenSpace.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_hiddenSpace.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_honorForBeggars.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_honorForBeggars.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_phoneManipulation.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_phoneManipulation.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_poorSurvivorNormal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_poorSurvivorNormal.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_poorSurvivorStrong.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_poorSurvivorStrong.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_stonePeddlerHomeless.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_stonePeddlerHomeless.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_ventilatorOdorFlashlight.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_ventilatorOdorFlashlight.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_wallOdor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_wallOdor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_invasion_firefighter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_invasion_firefighter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_invasion_grandma.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_invasion_grandma.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_invasion_robbery.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_invasion_robbery.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Evnet_plunder_oldMan.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Evnet_plunder_oldMan.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Food.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Food.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_invasion_firefighter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_invasionFirefighter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_invasion_grandma.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_invasionGrandma.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_invasion_robbery.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Event_independence_ox_invasionRobbery.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Evnet_plunder_oldMan.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/GameActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/GameActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Item.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Item.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/LoginPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/LoginPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/MainPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/MainPage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Member.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/Member.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/MoreDialog.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/MusicService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/MusicService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/MysqlConnection.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/MysqlConnection.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/OptionDialog.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/SoundSettingsDbHelper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7/SoundSettingsDbHelper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/animator/filp_to_back.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/animator/filp_to_back.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/animator/flip_to_front.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/animator/flip_to_front.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/developer_black.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/edittext_border.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edittext_border.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/gamestart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_foreground.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/level_progress.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/level_progress.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/login_dialog_rounded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/login_dialog_rounded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/mail_dialog_rounded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mail_dialog_rounded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/mail_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mail_item.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/more.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/option.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/quit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/sachievement.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/sgamestart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/smore.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/soption.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/squit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/achievements_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/achievements_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/game_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/game_activity.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_mail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_mail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/login_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/login_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/main_page.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_page.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/member_note.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/menu_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/menu_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/more_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/more_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/option_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/option_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/signup_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/signup_dialog.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/survival_note_page1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/survival_note_page1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/survival_note_page2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/survival_note_page2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/survival_note_page3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/survival_note_page3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/survival_note_page4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/survival_note_page4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi/ic_launcher_round.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/event_scripts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/raw/event_scripts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_diagram.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/project_diagram.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,21 +101,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.android.tools.idea.devicemanager.tab&quot;: &quot;Physical&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/clair/Documents/No.7&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cidr.known.project.marker": "true",
+    "com.android.tools.idea.devicemanager.tab": "Physical",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/hyundong/Downloads/No.7/app/src/main/java/com/cookandroid/block7",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/cookandroid/block7" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+    </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="com.cookandroid.block7" />
     </key>
@@ -337,7 +237,21 @@
       <option name="project" value="LOCAL" />
       <updated>1703018274304</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="와쌘즈">
+      <created>1703044609395</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703044609395</updated>
+    </task>
+    <task id="LOCAL-00007" summary="와쌘즈">
+      <created>1703044844944</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703044844944</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

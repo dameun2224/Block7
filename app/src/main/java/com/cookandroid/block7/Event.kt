@@ -1,5 +1,7 @@
 package com.cookandroid.block7
 
+import kotlin.random.Random
+
 // Event: MainGame, 이벤트 이름, 호출 가능 여부, 가중치
 open class Event(GameActivity: GameActivity, eventName: String,  type: Int, weight: Int, isAvailable: Boolean) {
     // 게임 액티비티
@@ -107,8 +109,34 @@ open class Event(GameActivity: GameActivity, eventName: String,  type: Int, weig
         // 스크립트 추가 부분 구현
     }
 
+    /* 이벤트 메소드 */
+    // 모두를 미침 상태로
+    fun CrazyLevelAllMember() {
+        for(member in GameActivity.memberList) {
+            if(member.getStateIsCrazy() || member.getStateIsVeryCrazy()) {
+                if(member.getIsIn() && member.getIsAlive()) {
+                    member.stateChangeCrazy()
+                }
+            }
+        }
+    }
+
+    // 모두를 미침, 착란 -> 정상
+    fun notCrazyLevelAllMember() {
+        for(member in GameActivity.memberList) {
+            if(member.getIsIn() && member.getIsAlive()) {
+                member.stateChangeNotCrazy()
+                member.stateChangeNotVeryCrazy()
+            }
+        }
+    }
 
     /* 랜덤 이벤트 */
+    fun generateRandomBoolean(cnt: Int): Boolean {
+        if(cnt < 0) return false
+        val randomNumber = Random.nextInt(cnt)
+        return randomNumber == 0
+    }
     //랜덤으로 가지고 있지 않은 아이템 중 하나를 얻음
     fun getRandomItem(){
         var selectedItem: Item? = GameActivity.getRandomItemitemListNotOwned()

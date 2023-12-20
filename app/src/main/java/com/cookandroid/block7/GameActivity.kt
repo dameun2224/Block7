@@ -20,6 +20,7 @@ import android.widget.ScrollView
 import android.widget.SeekBar
 import android.widget.Switch
 import android.widget.TextView
+import kotlin.random.Random
 
 
 class GameActivity : BaseActivity() {
@@ -92,6 +93,11 @@ class GameActivity : BaseActivity() {
         } else {
             food_water
         }
+    }
+    fun generateRandomBoolean(cnt: Int): Boolean {
+        if(cnt < 0) return false
+        val randomNumber = Random.nextInt(cnt)
+        return randomNumber == 0
     }
 
 
@@ -255,6 +261,11 @@ class GameActivity : BaseActivity() {
         }
 
         // 김밥, 물 버튼
+        var head_soun: ImageButton = findViewById(R.id.ration_soun)
+        var head_dameun: ImageButton = findViewById(R.id.ration_dameun)
+        var head_eunju: ImageButton = findViewById(R.id.ration_eunju)
+        var head_hyundong: ImageButton = findViewById(R.id.ration_hyundong)
+
         var is_soun_kimbap_check = false
         var is_dameun_kimbap_check = false
         var is_eunju_kimbap_check = false
@@ -303,6 +314,45 @@ class GameActivity : BaseActivity() {
         val finishbutton: ImageButton = findViewById(R.id.next_button_toend)
 
         /* Page 관련 메소드 */
+        // 멤버 dayPase - 하루가 지날 때 호출
+        fun memberDayPase(): String {
+            var str: String = ""
+            for(member in memberList) {
+                if(!member.getIsAlive()) continue
+                member.dayPase()
+                val defaultCnt: Int = 5
+                if(member.getStateIsCrazy() && generateRandomBoolean(defaultCnt)) { member.stateChangeVeryCrazy() }
+                if(member.getStateIsVeryCrazy() && generateRandomBoolean(defaultCnt)) {
+                    if(memberListIsIn.size == 1 || generateRandomBoolean(2)) { // 멤버가 한명만 남아있거나, 50% 확률로 가출
+
+                    } else { // 50% 확률로 다른 구성원을 죽임
+                        var memberTmp: Member
+                        do {
+                            memberTmp = getRandomMemberFromListIsIn()
+                        } while (memberTmp == member)
+                        memberTmp.die()
+                        member.stateChangeNotCrazy()
+                        member.stateChangeNotVeryCrazy()
+                        str += '\n' + "착란 상태의 " + member.nameKor + "은(는) 참지 기어코 " + memberTmp.nameKor + "을(를) 죽이고야 말았다. 이제야 악마가 보이지 않는다면서..\n"
+                    }
+                }
+                if(member.getStateIsHurt() && generateRandomBoolean(defaultCnt)) { member.stateChangeVeryHurt() }
+                if(member.getStateIsVeryHurt() && generateRandomBoolean(defaultCnt)) {
+                    member.die()
+                    str += '\n' + member.nameKor + "은(는) 결국 고통을 이기지 못했다.\n"
+                }
+                if(member.getStateIsSick() && generateRandomBoolean(defaultCnt)) { member.stateChangeVerySick() }
+                if(member.getStateIsVerySick() && generateRandomBoolean(defaultCnt)) {
+                    member.die()
+                    member.die()
+                    str += '\n' + member.nameKor + "의 병을 결국 생명을 빼앗아가고야 말았다.\n"
+                }
+                if(member.getStateIsTired() && generateRandomBoolean(defaultCnt)) { member.stateChangeNotTired() }
+                if(member.getStateIsFatigued() && generateRandomBoolean(defaultCnt)) { member.stateChangeNotFatiqued() }
+            }
+
+            return str
+        }
 
         // 멤버 스크립트 반환
         fun getAllMemberScript(): String {
@@ -323,19 +373,70 @@ class GameActivity : BaseActivity() {
                 View.GONE; hyundong_medkit.visibility = View.GONE
         }
 
+        // page2의 버튼 설정
+        fun setBtnPage2() {
+            // medkit 버튼 관리
+            soun_medkit.visibility = View.GONE
+            dameun_medkit.visibility = View.GONE
+            eunju_medkit.visibility = View.GONE
+            hyundong_medkit.visibility = View.GONE
+            if(item_medkit.getIsOwned()) {
+                if(member_dameun.isNeedMedkit()) dameun_medkit.visibility = View.VISIBLE
+                if(member_soun.isNeedMedkit()) soun_medkit.visibility = View.VISIBLE
+                if(member_eunju.isNeedMedkit()) eunju_medkit.visibility = View.VISIBLE
+                if(member_hyundong.isNeedMedkit()) hyundong_medkit.visibility = View.VISIBLE
+            }
+
+            // 멤버가 죽었거나 밖에 있으면 버튼이 보이지 않게
+            // 멤버가 살아있고 안에 있다면 버튼이 보이게
+            if(!member_soun.getIsAlive() || !member_soun.getIsIn()) {
+                head_soun.setImageResource(R.drawable.soun_head_no)
+                soun_kimbap.visibility = View.GONE
+                soun_water.visibility = View.GONE
+                soun_medkit.visibility = View.GONE
+            } else if(member_soun.getIsAlive() && member_soun.getIsIn()) {
+                head_soun.setImageResource(R.drawable.soun_head_ok)
+                soun_kimbap.visibility = View.VISIBLE
+                soun_water.visibility = View.VISIBLE
+            }
+            if(!member_dameun.getIsAlive() || !member_dameun.getIsIn()) {
+                head_dameun.setImageResource(R.drawable.daneun_head_no)
+                dameun_kimbap.visibility = View.GONE
+                dameun_water.visibility = View.GONE
+                dameun_medkit.visibility = View.GONE
+            } else if(member_dameun.getIsAlive() || member_dameun.getIsIn()) {
+                head_dameun.setImageResource(R.drawable.dameun_head_ok)
+                dameun_kimbap.visibility = View.VISIBLE
+                dameun_water.visibility = View.VISIBLE
+            }
+            if(!member_eunju.getIsAlive() || !member_eunju.getIsIn()) {
+                head_eunju.setImageResource(R.drawable.eunju_head_no)
+                eunju_kimbap.visibility = View.GONE
+                eunju_water.visibility = View.GONE
+                eunju_medkit.visibility = View.GONE
+            } else if(member_eunju.getIsAlive() || member_eunju.getIsIn()) {
+                head_eunju.setImageResource(R.drawable.eunju_head_ok)
+                eunju_kimbap.visibility = View.VISIBLE
+                eunju_water.visibility = View.VISIBLE
+            }
+            if(!member_hyundong.getIsAlive() || !member_hyundong.getIsIn()) {
+                head_hyundong.setImageResource(R.drawable.hyundong_head_no)
+                hyundong_kimbap.visibility = View.GONE
+                hyundong_water.visibility = View.GONE
+                hyundong_medkit.visibility = View.GONE
+            } else if(member_eunju.getIsAlive() || member_eunju.getIsIn()) {
+                head_eunju.setImageResource(R.drawable.eunju_head_ok)
+                eunju_kimbap.visibility = View.VISIBLE
+                eunju_water.visibility = View.VISIBLE
+            }
+        }
+
+        // medKit 사용 메소드 - 버튼
         fun useMedkit() {
-            if (is_soun_medkit_check) {
-                member_soun.useMedkit(); item_medkit.loseItem()
-            }
-            if (is_eunju_medkit_check) {
-                member_eunju.useMedkit(); item_medkit.loseItem()
-            }
-            if (is_dameun_medkit_check) {
-                member_dameun.useMedkit(); item_medkit.loseItem()
-            }
-            if (is_hyundong_medkit_check) {
-                member_hyundong.useMedkit(); item_medkit.loseItem()
-            }
+            if(is_soun_medkit_check) {member_soun.useMedkit(); item_medkit.loseItem()}
+            if(is_eunju_medkit_check) {member_eunju.useMedkit(); item_medkit.loseItem()}
+            if(is_dameun_medkit_check) {member_dameun.useMedkit(); item_medkit.loseItem()}
+            if(is_hyundong_medkit_check) {member_hyundong.useMedkit(); item_medkit.loseItem()}
         }
 
         // 식량 배급 메소드
@@ -381,20 +482,20 @@ class GameActivity : BaseActivity() {
         // event type : OX or Item ??
         fun setEventType() {
             // 이벤트 타입 파악
-            if (selectedEvent.type == 1) {
+            if(selectedEvent.type == 1) {
                 is_ox_event = true
                 is_item_event = false
-            } else if (selectedEvent.type == 0) {
+            } else if(selectedEvent.type == 0) {
                 is_ox_event = false
                 is_item_event = true
             }
             // 이벤트 타입에 따른 버튼 View 설정
-            if (is_ox_event) { // OX 이벤트의 경우
+            if(is_ox_event) { // OX 이벤트의 경우
                 pre_event_o_button.visibility = View.VISIBLE
                 pre_event_x_button.visibility = View.VISIBLE
                 item_choose_button.visibility = View.GONE
                 finishbutton.visibility = View.GONE
-            } else if (is_item_event) { // item 이벤트의 경우
+            } else if(is_item_event) { // item 이벤트의 경우
                 pre_event_o_button.visibility = View.GONE
                 pre_event_x_button.visibility = View.GONE
                 item_choose_button.visibility = View.VISIBLE
@@ -404,7 +505,7 @@ class GameActivity : BaseActivity() {
                 var itemTmp = itemList.find { it.nameItem == selectedEvent.selectionItem }
                 if (itemTmp != null) {
                     item_choose_button.setImageResource(itemTmp.itmeIconRes)
-                    if (itemTmp.getIsOwned()) item_choose_button.isEnabled = true
+                    if(itemTmp.getIsOwned()) item_choose_button.isEnabled = true
                     else item_choose_button.isEnabled = false
                 } else {
                     item_choose_button.setImageResource(R.drawable.o_icon)
@@ -624,23 +725,26 @@ class GameActivity : BaseActivity() {
                 // 5. Page4의 이벤트 스크립트 설정하기
                 pre_script.text = selectedEvent.getPreScript()
 
-                // 필요한 동작 수행
-                setMedkitBtn()
-                useMedkit()
-                feed()
 
-                post_script.text = post_script_tmp + '\n' + getAllMemberScript()
+                // 필요한 동작 수행
+                feed()
+                var dayPase_script = memberDayPase() // 모든 멤버 dayPase
+                useMedkit()
+
+                if(dayPase_script == "") post_script.text = post_script_tmp + '\n' + getAllMemberScript()
+                post_script.text = post_script_tmp + '\n' + dayPase_script + '\n' + getAllMemberScript()
+
+                // 기타 set
+                setBtnPage2()
 
                 // 페이지 초기화
                 initPage()
 
-                memberDayPase() // 모든 멤버 dayPase
                 updateAllVisibility() // 아이템, 멤버, 식량 visivility 업데이트
 
                 current_page = 1
                 updateFoodText()
             }, 1000) // 500 밀리초 = 0.5초
-
 
         }
 
