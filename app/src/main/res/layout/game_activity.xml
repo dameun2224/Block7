@@ -308,6 +308,13 @@
         <include layout="@layout/survival_note_page3" />
         <include layout="@layout/survival_note_page4" />
 
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ingame_option_button"
+            />
+
         <ImageButton
             android:id="@+id/ingame_option_button"
             android:layout_width="0dp"
@@ -348,12 +355,9 @@
             android:alpha="0"
             />
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ingame_option_button"
-            />
 
+
+        <include layout="@layout/option_dialog"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

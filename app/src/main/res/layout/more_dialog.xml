@@ -5,34 +5,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-
+    android:id="@+id/myTabHost"
+    android:background="@color/black">
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ratio_frame"
+        android:id="@+id/ratio_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="2:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="여기는 만든 사람 및 출처를 기록할 공간입니다."
-            android:textSize="40sp"
-            tools:layout_editor_absoluteX="-16dp"
-            tools:layout_editor_absoluteY="134dp" />
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
 
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            />
         <Button
-            android:id="@+id/Close_more_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="307dp"
-            tools:layout_editor_absoluteY="16dp" />
+            android:id="@+id/close_more"
+            app:layout_constraintEnd_toEndOf="@id/tabLayout"
+            app:layout_constraintTop_toTopOf="@id/tabLayout"
+            android:text="메인화면으로"
+            />
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tabLayout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

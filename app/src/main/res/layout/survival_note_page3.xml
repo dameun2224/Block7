@@ -58,7 +58,7 @@
                 app:layout_constraintEnd_toEndOf="@id/guide_line"
                 app:layout_constraintTop_toBottomOf="@id/guide_line"
                 android:fontFamily="@font/nanum3"
-                android:textSize="10pt"
+                android:textSize="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:text="누군가는 밖에서 물자를 구해와야한다."
@@ -83,7 +83,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/travel_text"
-                android:text="담은은 어쩌구"
+                android:text="담은은..."
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 />
@@ -95,7 +95,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/dameun_condition_text"
-                android:text="은주는 어쩌구"
+                android:text="은주는..."
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 />
@@ -107,7 +107,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/eunju_condition_text"
-                android:text="소운은 어쩌구"
+                android:text="소운은..."
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 />
@@ -119,7 +119,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/soun_condition_text"
-                android:text="현동은 어쩌구"
+                android:text="현동은..."
                 android:layout_marginTop="10dp"
                 android:textColor="@color/black"
                 />

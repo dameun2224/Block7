@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black">
+    android:background="@drawable/start_background">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ratio_layout"
@@ -15,47 +15,48 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/start_background"
         >
 
+
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/selected_gamestart"
-            android:src="@drawable/sgamestart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/gamestart_image"
+            android:src="@drawable/menu_gamestart"
             />
 
         <!-- selected_option -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/selected_option"
-            android:src="@drawable/soption"
-           />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/option_image"
+            android:src="@drawable/menu_option"
+            />
 
         <!-- selected_achive -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/selected_achive"
-            android:src="@drawable/sachievement"
-           />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/explanation_image"
+            android:src="@drawable/menu_explanation"
+            />
 
         <!-- selected_more -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/selected_more"
-            android:src="@drawable/smore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/developers_image"
+            android:src="@drawable/menu_developers"
             />
 
         <!-- selected_exit -->
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/selected_exit"
-            android:src="@drawable/squit"
-           />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/quit_image"
+            android:src="@drawable/menu_quit"
+            />
 
 
         <ImageButton
@@ -88,7 +89,7 @@
             />
 
         <ImageButton
-            android:id="@+id/achieve"
+            android:id="@+id/explanation_button"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.1"
@@ -96,39 +97,30 @@
             app:layout_constraintTop_toBottomOf="@id/option_game"
             app:layout_constraintStart_toStartOf="@id/option_game"
             android:background="@null"
-            android:contentDescription="Achievements"
-            android:tag="achieveTag"
-            android:onClick="onAchievementsClick"
             />
 
 
 
         <ImageButton
-            android:id="@+id/people"
+            android:id="@+id/developers_button"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.1"
             app:layout_constraintWidth_percent="0.15"
             android:background="@null"
-            app:layout_constraintTop_toBottomOf="@id/option_game"
-            app:layout_constraintStart_toStartOf="@id/option_game"
-            android:tag="peopleTag"
-            android:contentDescription="More Options"
-            android:onClick="onMoreClick"
+            app:layout_constraintTop_toBottomOf="@id/explanation_button"
+            app:layout_constraintStart_toStartOf="@id/explanation_button"
             />
 
         <ImageButton
-            android:id="@+id/Cancel"
+            android:id="@+id/quit_button"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.1"
             app:layout_constraintWidth_percent="0.15"
             android:background="@null"
-            app:layout_constraintTop_toBottomOf="@id/people"
-            app:layout_constraintStart_toStartOf="@id/people"
-            android:tag="cancelTag"
-            android:contentDescription="Cancel"
-            android:onClick="onQuitClick"
+            app:layout_constraintTop_toBottomOf="@id/developers_button"
+            app:layout_constraintStart_toStartOf="@id/developers_button"
             />
         
         <FrameLayout
@@ -139,6 +131,8 @@
             app:layout_constraintWidth_percent="0.15"
             android:background="@null"
             />
+
+        <include layout="@layout/option_dialog"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

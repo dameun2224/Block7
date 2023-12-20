@@ -66,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="13pt"
+                    android:textSize="20dp"
                     />
 
             </ScrollView>

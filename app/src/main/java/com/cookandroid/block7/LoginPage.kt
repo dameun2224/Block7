@@ -78,10 +78,8 @@ class MainActivity : BaseActivity() {
         gamestart_button.setOnTouchListener { view, motionEvent ->
             when (motionEvent.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    gamestart_button.setImageResource(R.drawable.gamestart_button_pressed)
                 }
                 MotionEvent.ACTION_UP -> {
-                    gamestart_button.setImageResource(R.drawable.gamestart_button_unpressed)
                     if(loginstate == false){
                         loginDialog.visibility = View.VISIBLE
                     }
@@ -91,7 +89,6 @@ class MainActivity : BaseActivity() {
                     }
                 }
                 MotionEvent.ACTION_CANCEL -> {
-                    gamestart_button.setImageResource(R.drawable.gamestart_button_unpressed)
                 }
             }
             true

@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Developer_project"
         tools:targetApi="31">
         <activity
-            android:name="com.cookandroid.block7.MainPage"
+            android:name="com.cookandroid.block7.MainActivity"
             android:exported="true"
             android:screenOrientation="landscape">
 
@@ -33,13 +33,13 @@
             />
 
         <activity
-            android:name="com.cookandroid.block7.MainActivity"
+            android:name="com.cookandroid.block7.MainPage"
             android:screenOrientation="landscape"
             android:exported="true"
             />
 
         <activity
-            android:name="com.cookandroid.block7.OptionDialog"
+            android:name="com.cookandroid.block7.MoreDialog"
             android:screenOrientation="landscape"
             android:exported="true"
             />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/option_dialog"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -38,7 +39,9 @@
             android:layout_height="0dp"
             app:layout_constraintWidth_percent="0.25"
             app:layout_constraintHeight_percent="0.07"
-            android:background="@color/white"
+            android:background="@android:color/transparent"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white"
             app:layout_constraintTop_toTopOf="@id/cmd_background"
             app:layout_constraintBottom_toBottomOf="@id/cmd_background"
             app:layout_constraintStart_toStartOf="@id/cmd_background"
@@ -51,7 +54,9 @@
             android:layout_height="0dp"
             app:layout_constraintWidth_percent="0.25"
             app:layout_constraintHeight_percent="0.07"
-            android:background="@color/white"
+            android:background="@android:color/transparent"
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white"
             app:layout_constraintTop_toBottomOf="@id/music_volume_seekbar"
             app:layout_constraintStart_toStartOf="@id/music_volume_seekbar"
             android:layout_marginTop="10dp"
@@ -86,10 +91,26 @@
             android:layout_marginRight="20dp"
             />
 
+        <!--스위치 버튼 커스터 마이징으로 변경식 on/off에 따라 색이 바뀌도록 함.-->
+
+        <TextView
+            android:id="@+id/effect_change_apply_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nanum4"
+            android:text="적용하기"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="@id/apply_button"
+            app:layout_constraintTop_toBottomOf="@id/effect_sound_volume_onoff" />
+
         <Switch
             android:id="@+id/music_volume_onoff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_selector"
             app:layout_constraintTop_toTopOf="@id/music_volume_seekbar"
             app:layout_constraintBottom_toBottomOf="@id/music_volume_seekbar"
             app:layout_constraintStart_toEndOf="@id/music_volume_seekbar"
@@ -100,6 +121,8 @@
             android:id="@+id/effect_sound_volume_onoff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_selector"
             app:layout_constraintTop_toTopOf="@id/effect_sound_volume_seekbar"
             app:layout_constraintBottom_toBottomOf="@id/effect_sound_volume_seekbar"
             app:layout_constraintStart_toEndOf="@id/effect_sound_volume_seekbar"
@@ -110,16 +133,15 @@
             android:id="@+id/apply_button"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintWidth_percent="0.1"
-            app:layout_constraintHeight_percent="0.1"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/transparent"
             app:layout_constraintEnd_toEndOf="@id/effect_sound_volume_onoff"
+            app:layout_constraintHeight_percent="0.1"
             app:layout_constraintTop_toBottomOf="@id/effect_sound_volume_onoff"
-            android:layout_marginTop="10dp"
-            android:background="@color/white"
-            />
+            app:layout_constraintWidth_percent="0.1" />
 
         <ImageButton
-            android:id="@+id/close_button"
+            android:id="@+id/option_dialog_close_button"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintHeight_percent="0.1"

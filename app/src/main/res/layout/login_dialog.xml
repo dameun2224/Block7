@@ -34,16 +34,16 @@
             android:background="@drawable/login_dialog_rounded">
             >
 
-            <ImageView
+            <TextView
                 android:id="@+id/login_title"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintWidth_percent="0.6"
-                app:layout_constraintHeight_percent="0.3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:scaleType="fitXY"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:src="@drawable/developer_black"
+                android:fontFamily="@font/nanum5"
+                android:textSize="30dp"
+                android:text="7호관"
                 app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginTop="30dp"
                 />
@@ -58,8 +58,10 @@
                 android:textColor="@color/black"
                 android:hint="학번 입력"
                 android:padding="5dp"
-                app:layout_constraintStart_toStartOf="@id/login_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/login_title"
+                android:layout_marginTop="30dp"
                 />
 
             <ImageButton

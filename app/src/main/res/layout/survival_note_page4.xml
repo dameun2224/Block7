@@ -59,7 +59,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:fontFamily="@font/nanum2"
-                android:textSize="15pt"
+                android:textSize="20dp"
                 android:text="여기에 텍스트를 넣습니다."
                 android:textColor="@color/black"
                 />

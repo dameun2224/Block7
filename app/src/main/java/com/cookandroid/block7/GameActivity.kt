@@ -6,6 +6,8 @@ import android.animation.ObjectAnimator
 import android.content.Intent
 import android.media.Image
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.transition.Fade
 import android.transition.Transition
 import android.transition.TransitionManager
@@ -15,6 +17,8 @@ import android.webkit.WebView.FindListener
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ScrollView
+import android.widget.SeekBar
+import android.widget.Switch
 import android.widget.TextView
 
 
@@ -173,10 +177,11 @@ class GameActivity : BaseActivity() {
         firstdayfadeout(blackBackground, dayText)
 
         // 인게임 옵션 버튼
+        var option_dialog : View = findViewById(R.id.option_dialog)
+        option_dialog.visibility = View.GONE
         val ingame_option_button: ImageButton = findViewById(R.id.ingame_option_button)
         ingame_option_button.setOnClickListener {
-            val intent = Intent(this, OptionDialog::class.java)
-            startActivity(intent)
+            option_dialog.visibility = View.VISIBLE
         }
 
         eventHandler = EventHandler(this)
@@ -596,43 +601,104 @@ class GameActivity : BaseActivity() {
         finishbutton.setOnClickListener {  //일차 종료 버튼
             survival_note_page4.visibility = View.GONE
 
-            post_script.text = ""
-            pre_script.text = ""
-
-            // 1. 이벤트 클릭 리스너 결과 받아오기 --> 클릭 리스너에 처리되어 있음
-
-            // 2. 이벤트 실행
-            selectedEvent.executeEventEffect(choose_value)
-
-            // 3. Page1의 이벤트 스크립트 설정하기
-            var post_script_tmp: String = selectedEvent.getPostScript()
-
-            // 4. 이벤트 선택
-            selectedEvent = eventHandler.getRandomEvent()
-            setEventType()
-
-            // 5. Page4의 이벤트 스크립트 설정하기
-            pre_script.text = selectedEvent.getPreScript()
-
-            // 필요한 동작 수행
-            setMedkitBtn()
-            useMedkit()
-            feed()
-
-            post_script.text = post_script_tmp + '\n' + getAllMemberScript()
-
-            // 페이지 초기화
-            initPage()
-
             date++
             dayText.setText("${date}일차")
             animateScreenTransition(blackBackground, dayText)
 
-            memberDayPase() // 모든 멤버 dayPase
-            updateAllVisibility() // 아이템, 멤버, 식량 visivility 업데이트
+            Handler(Looper.getMainLooper()).postDelayed({
+                post_script.text = ""
+                pre_script.text = ""
 
-            current_page = 1
-            updateFoodText()
+                // 1. 이벤트 클릭 리스너 결과 받아오기 --> 클릭 리스너에 처리되어 있음
+
+                // 2. 이벤트 실행
+                selectedEvent.executeEventEffect(choose_value)
+
+                // 3. Page1의 이벤트 스크립트 설정하기
+                var post_script_tmp: String = selectedEvent.getPostScript()
+
+                // 4. 이벤트 선택
+                selectedEvent = eventHandler.getRandomEvent()
+                setEventType()
+
+                // 5. Page4의 이벤트 스크립트 설정하기
+                pre_script.text = selectedEvent.getPreScript()
+
+                // 필요한 동작 수행
+                setMedkitBtn()
+                useMedkit()
+                feed()
+
+                post_script.text = post_script_tmp + '\n' + getAllMemberScript()
+
+                // 페이지 초기화
+                initPage()
+
+                memberDayPase() // 모든 멤버 dayPase
+                updateAllVisibility() // 아이템, 멤버, 식량 visivility 업데이트
+
+                current_page = 1
+                updateFoodText()
+            }, 1000) // 500 밀리초 = 0.5초
+
+
+        }
+
+        val musicVolumeControl: SeekBar = findViewById(R.id.music_volume_seekbar)
+        val soundVolumeControl: SeekBar = findViewById(R.id.effect_sound_volume_seekbar)
+        val musicVolumeOnOffSwitch: Switch = findViewById(R.id.music_volume_onoff)
+        val soundVolumeOnOffSwitch: Switch = findViewById(R.id.effect_sound_volume_onoff)
+
+        val dbHelper = SoundSettingsDbHelper(this)
+        val latestSettings = dbHelper.getLatestSoundSettings()
+
+        latestSettings?.let {
+            val musicVolume = it.getAsInteger(SoundSettingsDbHelper.COLUMN_MUSIC_VOLUME) ?: 100
+            val musicVolumeOnOff = it.getAsInteger(SoundSettingsDbHelper.COLUMN_MUSIC_VOLUME_ON_OFF) ?: 0
+            val effectVolume = it.getAsInteger(SoundSettingsDbHelper.COLUMN_EFFECT_VOLUME) ?: 100
+            val effectVolumeOnOff = it.getAsInteger(SoundSettingsDbHelper.COLUMN_EFFECT_VOLUME_ON_OFF) ?: 0
+
+            // SeekBar와 Switch 상태 업데이트
+            musicVolumeControl.progress = musicVolume
+            soundVolumeControl.progress = effectVolume
+            musicVolumeOnOffSwitch.isChecked = musicVolumeOnOff == 0
+            soundVolumeOnOffSwitch.isChecked = effectVolumeOnOff == 0
+        }
+
+        val applyButton : ImageButton = findViewById(R.id.apply_button)
+        val closeButton : ImageButton = findViewById(R.id.option_dialog_close_button)
+        closeButton.setOnClickListener{
+            option_dialog.visibility = View.GONE
+        }
+
+        applyButton.setOnClickListener {
+
+            val musicVolumeForDB = musicVolumeControl.progress
+            val soundVolumeForDB = soundVolumeControl.progress
+
+            val musicVolumeOnOff = if (musicVolumeOnOffSwitch.isChecked) 0 else 1
+            val effectVolumeOnOff = if (soundVolumeOnOffSwitch.isChecked) 0 else 1
+
+            // 데이터베이스 헬퍼 인스턴스 생성
+            val dbHelper = SoundSettingsDbHelper(this)
+
+            // 데이터 저장
+            dbHelper.saveSoundSettings(musicVolumeForDB, musicVolumeOnOff, soundVolumeForDB, effectVolumeOnOff)
+
+            // 인텐트 생성
+            val serviceIntent = Intent(this, MusicService::class.java)
+
+            // 스위치 및 시크바 상태 읽기
+            val musicVolume = if (musicVolumeOnOffSwitch.isChecked) musicVolumeControl.progress else 1
+            val soundVolume = if (soundVolumeOnOffSwitch.isChecked) soundVolumeControl.progress else 1
+
+            // 인텐트에 볼륨 데이터 추가
+            serviceIntent.putExtra("MUSIC_VOLUME", musicVolume)
+            serviceIntent.putExtra("SOUND_VOLUME", soundVolume)
+            serviceIntent.action = "CHANGE_VOLUME"
+
+            // 서비스 시작
+            startService(serviceIntent)
         }
     }
 
@@ -642,7 +708,7 @@ class GameActivity : BaseActivity() {
 
     fun randomizeItems() {
         // 식량 랜덤으로 생성
-        food_kimbap.getFoodRandom(3, 6)
+        food_kimbap.getFoodRandom(4, 6)
         food_water.getFoodRandom(3, 6)
 
         // 아이템을 랜덤으로 6개 골라 얻음
