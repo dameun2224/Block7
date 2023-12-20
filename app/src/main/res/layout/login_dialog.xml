@@ -45,7 +45,8 @@
                 android:textSize="30dp"
                 android:text="7호관"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/black"
                 />
 
             <EditText

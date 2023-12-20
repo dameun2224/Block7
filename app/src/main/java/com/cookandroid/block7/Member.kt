@@ -131,8 +131,6 @@ class Member(GameActivity: GameActivity, name: String, nameKor: String, memberVi
     fun die() {
         isExploring = false
         isAlive = false
-        isIn = false
-        this.memberView.visibility = View.GONE
         GameActivity.memberListIsIn.remove(this)
     }
 
@@ -297,6 +295,7 @@ class Member(GameActivity: GameActivity, name: String, nameKor: String, memberVi
             }
             else if(!isIn || isExploring) memberView.visibility = View.GONE
         }
+
     }
 
     // state(String) 업데이트

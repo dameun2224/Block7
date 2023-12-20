@@ -211,7 +211,9 @@ class GameActivity : BaseActivity() {
         var selectedEvent = eventHandler.getRandomEvent()
 
         pre_script.text = selectedEvent.getPreScript()
-        post_script.text = "우리가 무사히 살아나갈 수 있을까?"
+        post_script.text = "지금 밖은 외계인들과 그들이 살포한 정체불명의 초록색 가스로 가득차있다." +
+                "아무래도 마시면 위험할 것 같다. 우리가 가진것은 별로 없지만 반드시 탈출할 때 까지 버텨야만 한다." +
+                "버틸 수 있을까? 아니, 버텨야만 한다."
 
         val survival_note_page1: View = findViewById(R.id.page1)
         val survival_note_page2: View = findViewById(R.id.page2)
