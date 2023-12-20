@@ -45,6 +45,8 @@ class GameActivity : BaseActivity() {
     lateinit var item_phone: Item
     lateinit var item_rattle: Item
     lateinit var item_toolbox: Item
+    lateinit var item_boksil: Item
+    lateinit var item_elizabeth: Item
 
     lateinit var food_kimbap: Food
     lateinit var food_water: Food
@@ -156,10 +158,13 @@ class GameActivity : BaseActivity() {
         item_phone = Item(this, "phone", "휴대폰", findViewById(R.id.item_phone))
         item_rattle = Item(this, "rattle", "딸랑이", findViewById(R.id.item_rattle))
         item_toolbox = Item(this, "toolbox", "공구상자", findViewById(R.id.item_toolbox))
+        item_boksil = Item(this, "boksil", "복실", findViewById(R.id.item_boksil))
+        item_elizabeth = Item(this, "elizabeth", "엘리자베스", findViewById(R.id.item_elizabeth))
 
         itemList = listOf(
             item_axe, item_book, item_card, item_drone, item_medkit, item_flashlight,
-            item_gasmask, item_lock, item_map, item_pesticide, item_phone, item_rattle, item_toolbox
+            item_gasmask, item_lock, item_map, item_pesticide, item_phone, item_rattle, item_toolbox,
+            item_boksil, item_elizabeth
         )
         //모든 아이템들에 대한 lose처리
         for (item in itemList) item.loseItem()

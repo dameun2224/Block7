@@ -157,7 +157,8 @@ class MainActivity : BaseActivity() {
 
     private fun handleLogin(studentId: String) {
         getPlayersDataByStudentId(studentId) { isDataAvailable ->
-            if (isDataAvailable) {
+            if (isDataAvailable && studentId.length==9) {
+
                 Toast.makeText(this@MainActivity, "로그인 성공!", Toast.LENGTH_SHORT).show()
                 val loginStateTextView: TextView = findViewById(R.id.login_state)
                 loginStateTextView.text = "$studentId"
