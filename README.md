@@ -1,28 +1,23 @@
-모든 Event_어쩌구 클래스가 Event 클래스를 상속받도록 했습니다.
+전북대학교 2023 2학기 모바일 프로그래밍 팀프로젝트입니다.
 
-![image](https://github.com/dameun2224/No.7/assets/113423804/34388f01-d27a-4e97-9a1d-3a67d0a8053f).
-Event 클래스의 init은 Evnet 클래스를 상속받는 클래스의 객체가 생성될 때 호출됩니다. 공통적으로 처리할 수 있는 부분은 Event 클래스의 init에 작성했습니다.
+- 22학번 김담은
+- 22학번 김소운
+- 22학번 송현동
+- 22학번 정은주
 
-![image](https://github.com/dameun2224/No.7/assets/113423804/e4bbd028-ffb8-49f4-a45e-c02a490019fe)
-Event 클래스를 상속받는 클래스의 init은 해당 클래스의 객체가 생성될 때 호출됩니다. preScript, postScript의 설정과 추가로 필요한 부분은 상속받은 클래스의 init에 작성했습니다.
-ex) 약탈 이벤트의 경우 따로 events_exploring 리스트로 다루기 위해 해당 클래스의 init에서만 추가되도록 했습니다.
+'60초' 게임을 오마주한 '7호관' 게임입니다.
 
-**<Evnet 클래스>**
+엔딩을 완성하지 못하였고, 이벤트 선택 및 여러 부분에러 자잘한 버그가 많습니다.
 
-**val a = GameActivity.eventHandler**
+2024년도 말까지 유니티로 이전 및 게임을 완성할 계획입니다.
 
-GameActivity.eventHandler의 호출이 잦고, 편히 다루기 위해 Event 클래스에 a 읽기전용 변수를 추가했습니다.
-
-**executeEventEffect()**
-
-EventHandler 에서는 Event 클래스의 executeEventEffect() 메소드를 호출합니다. executeEventEffect() 메소드에서는 Event 클래스를 상속받은 Event_어쩌구 클래스의 eventEffect() 메소드를 호출합니다. 또한 postScript 부분을 처리합니다.
-
-**랜덤 메소드 부분**
-
-Event 클래스를 상속받는 Event_어쩌구 클래스의 eventEffect() 메소드에서 랜덤으로 누군가 다치거나, 아이템을 잃거나 하는 경우 Event 클래스에 작성된 랜덤 메소드를 호출하면 됩니다.
-
-**<전체 동작 구조>**
-
-Event_어쩌구 클래스 생성: Event의 생성자 및 init 호출 -> Event_어쩌구의 생성자 및 init 호출
-
-이벤트 선택 및 실행: EventHandler에서 Event_어쩌구 객체 선택 ->  Event 멤버 메소드 executeEventEffect() 호출 -> Event_어쩌구 멤버 메소드 eventEffect() 호출 ..
+![image](https://github.com/dameun2224/Block7/assets/113423804/ca98c1f0-3281-48d2-9f24-ad8e740922ba)
+![image](https://github.com/dameun2224/Block7/assets/113423804/455a9494-e165-471f-8166-c4747c557f8e)
+![image](https://github.com/dameun2224/Block7/assets/113423804/7a17f9df-e4e5-46b2-818e-aa3dd7b1e9eb)
+![image](https://github.com/dameun2224/Block7/assets/113423804/d15f798d-d794-4144-b101-fa2becd7e603)
+![image](https://github.com/dameun2224/Block7/assets/113423804/d20fb818-6fdf-4370-a1d2-c17888057453)
+![image](https://github.com/dameun2224/Block7/assets/113423804/65f807c0-a5d4-4c97-aeae-0b94b64b1fb6)
+![image](https://github.com/dameun2224/Block7/assets/113423804/d899ab8e-c377-49e5-8bad-09d651f94514)
+![image](https://github.com/dameun2224/Block7/assets/113423804/efd59306-0a61-435b-9c10-d1bf77b6d5ee)
+![image](https://github.com/dameun2224/Block7/assets/113423804/20095d44-75d6-47ca-aafe-ee17e7901287)
+![image](https://github.com/dameun2224/Block7/assets/113423804/2b243ea2-7687-47c1-8626-f8ca5c994d48)
